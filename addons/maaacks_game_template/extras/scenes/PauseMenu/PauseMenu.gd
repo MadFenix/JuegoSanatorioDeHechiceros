@@ -63,6 +63,15 @@ func _on_exit_button_pressed():
 	%ConfirmExit.popup_centered()
 	popup_open = %ConfirmExit
 
+func _on_english_button_pressed():
+	TranslationServer.set_locale('en')
+
+func _on_spanish_button_pressed():
+	TranslationServer.set_locale('es')
+
+func _on_catalan_button_pressed():
+	TranslationServer.set_locale('ca')
+
 func _on_confirm_restart_confirmed():
 	SceneLoader.reload_current_scene()
 	InGameMenuController.close_menu()

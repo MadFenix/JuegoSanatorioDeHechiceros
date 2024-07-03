@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game Template"
+config/name="Sanatorio de Hechiceros"
 run/main_scene="res://scenes/Opening/OpeningWithLogo.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
@@ -97,7 +97,7 @@ interact={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
+locale/translations=PackedStringArray("res://translations/menus_translations.ca.translation", "res://translations/menus_translations.en.translation", "res://translations/menus_translations.es.translation")
 
 [maaacks_game_template]
 

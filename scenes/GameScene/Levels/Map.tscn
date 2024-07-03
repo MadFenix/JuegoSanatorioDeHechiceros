@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://1pdv76fc2dve"]
+
+[ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_uh81n"]
+[ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="2_3weym"]
+[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="3_534nh"]
+
+[node name="Map" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uh81n")
+
+[node name="MapResume" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MapResume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mapa"
+horizontal_alignment = 1
+
+[node name="MapContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Summary" parent="MapContainer" instance=ExtResource("2_3weym")]
+layout_mode = 2
+
+[node name="GoToMapBtn" parent="MapContainer/Summary/MarginContainer6" index="0"]
+text = "Base"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MapContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Mysticism" type="TextureRect" parent="MapContainer/MarginContainer3"]
+custom_minimum_size = Vector2(1120, 100)
+layout_mode = 2
+texture = ExtResource("3_534nh")
+
+[connection signal="pressed" from="MapContainer/Summary/MarginContainer6/GoToMapBtn" to="." method="_on_win_button_pressed"]
+
+[editable path="MapContainer/Summary"]

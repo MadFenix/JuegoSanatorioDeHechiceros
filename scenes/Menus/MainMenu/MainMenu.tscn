@@ -8,6 +8,3 @@
 game_scene_path = "res://scenes/GameScene/GameUI.tscn"
 options_packed_scene = ExtResource("2_ir3dh")
 credits_packed_scene = ExtResource("3_fhpuo")
-
-[node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
-text = "Sanatorio de Hechiceros"
