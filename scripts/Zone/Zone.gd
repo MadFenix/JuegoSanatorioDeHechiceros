@@ -64,7 +64,7 @@ func check_cure() -> void:
     if thaumaturgy_assigned >= thaumaturgy_required and adivination_assigned >= adivination_required and evocation_assigned >= evocation_required:
         state = "curada"
 
-    if last_state == state:
+    if last_state == state and state != "enferma":
         state = "sana"
     
 
