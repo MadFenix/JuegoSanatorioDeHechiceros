@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj6ykgmkctqg0"]
+
+[ext_resource type="Script" path="res://scenes/GameScene/objetos/Magia/test_jmg.gd" id="1_4ru7c"]
+[ext_resource type="PackedScene" uid="uid://dlrtl565cb3a8" path="res://scenes/GameScene/objetos/Magia/magia.tscn" id="1_j7qha"]
+
+[sub_resource type="GDScript" id="GDScript_xilqt"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="TestJMG" type="Node2D"]
+script = ExtResource("1_4ru7c")
+
+[node name="Magia" parent="." instance=ExtResource("1_j7qha")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = SubResource("GDScript_xilqt")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
