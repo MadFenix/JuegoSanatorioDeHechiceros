@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=5 format=3 uid="uid://4ionx33eq4yo"]
 
+[ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
 [ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_6rsmk"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="3_yfgrd"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ry618")
 script = ExtResource("1_wiw80")
 
 [node name="BaseResume" type="HBoxContainer" parent="."]
