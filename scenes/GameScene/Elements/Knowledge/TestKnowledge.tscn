@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj6ykgmkctqg0"]
+
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/Knowledge/TestKnowledge.gd" id="1_xrpf1"]
+[ext_resource type="PackedScene" uid="uid://dlrtl565cb3a8" path="res://scenes/GameScene/Elements/Knowledge/Knowledge.tscn" id="2_in5jk"]
+
+[node name="TestJMG" type="Node2D"]
+script = ExtResource("1_xrpf1")
+
+[node name="Mining" parent="." instance=ExtResource("2_in5jk")]
+knowledge_type = 0
+turns_needed_to_levelup = Array[int]([1, 2, 3])
+pause = false
+
+[node name="Exploration" parent="." instance=ExtResource("2_in5jk")]
+position = Vector2(0, 100)
+knowledge_type = 1
+turns_needed_to_levelup = Array[int]([1, 2, 2])
+
+[node name="Misticismo" parent="." instance=ExtResource("2_in5jk")]
+position = Vector2(0, 200)
+knowledge_type = 2
+turns_needed_to_levelup = Array[int]([1, 1, 2])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
