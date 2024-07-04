@@ -4,11 +4,15 @@ signal nivel_alcanzado()
 signal progress_add()
 signal progress_change()
 
-@export_enum ("Adivinación", "Evocación", "Taumaturgia") var magic_type = 0:
+@export_enum ("Mineria", "Exploracion", "Misticismo") var magic_type = 0:
 	set(valor):
 		magic_type = clamp(valor,0,2)
 	get:
 		return magic_type
+
+
+
+@export var pause: bool = false
 
 @export var progress: float = 0 :
 	set(valor):
@@ -36,21 +40,22 @@ signal progress_change()
 		return level_magic
 
 var dic_magic = {
-	0: "Adivinación",
-	1: "Evocación",
-	2: "Taumaturgia"
+	0: "Mineria",
+	1: "Exploracion",
+	2: "Misticismo"
 }
 
 
 func _ready() -> void:
 	progress_change.connect(progress_refresh)
 	progress_add.connect(conocimiento)
+
 	
 func progress_refresh():
 	$VBoxContainer/ProgressBar.value = progress
 	
 func conocimiento():
-	progress += 1
+	progress += 1 * multi
 
 
 func multiplicador():

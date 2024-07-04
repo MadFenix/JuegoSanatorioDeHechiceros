@@ -110,8 +110,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/defaults/default_environment="res://default_env.tres"
-
-;Lineas agregadas por JMG
 renderer/rendering_method="gl_compatibility"
-;fin lineas JMG
+environment/defaults/default_environment="res://default_env.tres"
