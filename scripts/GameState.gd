@@ -6,7 +6,7 @@ signal nextTurn(turn)
 ## Señal para cambiar el estado de la zona
 signal zoneChanged(state, dialogue)
 
-# Señales para añadir magos y pociones
+## Señales para añadir magos y pociones
 signal addWizard(type)
 signal addPotion(amount)
 

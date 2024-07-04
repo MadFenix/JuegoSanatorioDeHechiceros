@@ -12,24 +12,31 @@ Zona:
 
 @onready var gameState : Node = get_node("/root/GameState")
 
-@export var zoneName : String
+@export var zoneName : String 
 @export var state : String = "sana"  # Estado inicial por defecto
-@export var required_wizards : Dictionary = {}  # Cantidad de magos necesarios por tipo
+# Magos necesarios por tipo para curar la zona
+@export var adivination_required: int = 0
+@export var thaumaturgy_required : int = 0
+@export var evocation_required : int = 0
 
 var states = ["sana", "enferma", "curada"]
 
-# Recursos actuales asignados a la zona
-var current_wizards : Dictionary = {}
+# Pociones y magos asignados a la zona
+var adivination_assigned : int = 0
+var thaumaturgy_assigned : int = 0
+var evocation_assigned : int = 0
 var current_potions : int = 0
 
-var dialogue : String
+var dialogue : String # Diálogo que se mostrará al terminar el turno
+var last_state : String = ""
 
 func _ready():
-    # Conectar señal de cambio de turno
+    # Conectar señales de GameState
     gameState.connect("nextTurn", Callable(self, "nextTurn"))
     gameState.connect("addWizard", Callable(self, "assign_wizards"))
     gameState.connect("addPotion", Callable(self, "assign_potions"))
 
+    # Por defecto, si no se ha asignado un estado válido, se asigna "sana"
     if state not in states:
         state = "sana"
     
@@ -39,44 +46,62 @@ func check_zone_state() -> String:
     return state
 
 # Asignar magos a la zona por tipo
-func assign_wizard(type: String):
-    if current_wizards.has(type):
-        current_wizards[type] += 1
-    else:
-        current_wizards[type] = 1
+func assign_wizard(type: String) -> void:
+    if type == "adivinacion":
+        adivination_assigned += 1
+    elif type == "taumaturgia":
+        thaumaturgy_assigned += 1
+    elif type == "evocacion":
+        evocation_assigned += 1
 
-func assign_potions(amount: int):
+func assign_potions(amount: int) -> void:
     current_potions += amount
 
-func check_cure():
-    if state == "enferma":
-        var needed_wizards = calculate_needed_wizards()
-        needed_wizards -= current_potions  # Reducir magos necesarios por la cantidad de pociones
-        current_potions = 0  # Resetear pociones después de usarlas
+func check_cure() -> void:
+    last_state = state
+    
+    # Si hay suficientes magos asignados, la zona se cura
+    if thaumaturgy_assigned >= thaumaturgy_required and adivination_assigned >= adivination_required and evocation_assigned >= evocation_required:
+        state = "curada"
 
-        if needed_wizards <= 0:
-            state = "curada"
-        else:
-            state = "enferma"
-
-func update_dialogue():
-    if state == "enferma":
-        dialogue = "La zona está enferma. Necesita " + str(calculate_needed_wizards()) + " magos para curarla."
-    elif state == "curada":
-        dialogue = "La zona ha sido curada. ¡Felicidades!"
-    elif state == "sana":
-        dialogue = "La zona está sana, no se necesita hacer nada."
-
-
-func calculate_needed_wizards() -> int:
-    var needed = 0
-    for type in required_wizards.keys():
-        needed += max(0, required_wizards[type] - current_wizards.get(type, 0))
-    return needed
+    if last_state == state:
+        state = "sana"
     
 
-func nextTurn():
+func update_dialogue() -> void:
+
+    if state == "enferma":
+        
+        var needed_wizards = calculate_needed_wizards()
+        var thaumaturgy_needed = needed_wizards[0]
+        var adivination_needed = needed_wizards[1]
+        var evocation_needed = needed_wizards[2]
+
+        dialogue = "La zona está enferma. Necesita " + str(thaumaturgy_needed) + " taumaturgos, " + str(adivination_needed) + " adivinos y " + str(evocation_needed) + " evocadores para curarse."
+
+    elif state == "curada":
+
+        dialogue = "La zona ha sido curada. ¡Felicidades!"
+
+
+
+func calculate_needed_wizards() -> Array:
+    
+    # Devuelve la cantidad de magos necesarios por tipo para curar la zona
+    # Formato de retorno: Taumaturgos, Adivinos, Evocadores
+
+    var thaumaturgy_needed = max(0, thaumaturgy_required - thaumaturgy_assigned)
+    var adivination_needed = max(0, adivination_required - adivination_assigned)
+    var evocation_needed = max(0, evocation_required - evocation_assigned)
+
+    return [thaumaturgy_needed, adivination_needed, evocation_needed]
+    
+
+func nextTurn() -> void:
     check_cure()  # Verificar si la zona se cura
     update_dialogue()  # Actualizar diálogo
     gameState.emit_signal("zoneChanged", state, dialogue)  # Emitir señal de cambio de estado
 
+func changeStateToIll() -> void:
+    # Cambia el estado de la zona a enferma
+    state = "enferma"
