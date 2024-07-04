@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdigkhvu1rabp"]
+
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/Zone/Zone.gd" id="1_ekfsk"]
+
+[node name="Zone" type="Node2D"]
+script = ExtResource("1_ekfsk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(0, 0, 0, 100, 100, 100, 100, 0)

@@ -4,11 +4,11 @@ signal nextTurn()
 
 # Señales para las zonas
 ## Señal para cambiar el estado de la zona
-signal zoneChanged(state, dialogue)
+signal zoneChanged()
 
 ## Señales para añadir magos y pociones
-signal addWizard(type)
-signal addPotion(amount)
+signal addWizard()
+signal addPotion()
 
 var currentTurn = 1
 var miningLevel = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5h4es0flucji"]
+
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/Zone/TestZone.gd" id="1_l1rel"]
+[ext_resource type="PackedScene" uid="uid://bdigkhvu1rabp" path="res://scenes/GameScene/Elements/Zone/Zone.tscn" id="2_wvcwe"]
+
+[node name="TestZone" type="Node2D"]
+script = ExtResource("1_l1rel")
+
+[node name="Zone" parent="." instance=ExtResource("2_wvcwe")]
+form = Array[Vector2]([Vector2(0, 0), Vector2(0, 100), Vector2(50, 200), Vector2(100, 100), Vector2(100, 0)])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

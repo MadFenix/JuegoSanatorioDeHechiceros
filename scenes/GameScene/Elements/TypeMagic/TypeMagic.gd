@@ -1,3 +1,4 @@
+class_name TypeMagicClass
 extends Node2D
 
 signal levelup()
@@ -34,8 +35,11 @@ func _ready() -> void:
 		magic_type = 0
 	levelup.connect(level_change)
 
+func getType() -> String:
+	return dic_magic[magic_type]
+
 func label_refresh():
-	$VBoxContainer/Label.text = dic_magic[magic_type]
+	$VBoxContainer/Label.text = getType()
 
 func level_change():
 	$VBoxContainer/HBoxContainer/Label_Nivel.text = str(level_magic)
