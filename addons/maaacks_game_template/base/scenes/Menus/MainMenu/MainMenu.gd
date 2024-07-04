@@ -104,6 +104,15 @@ func _on_credits_button_pressed():
 func _on_exit_button_pressed():
 	get_tree().quit()
 
+func _on_english_button_pressed():
+	TranslationServer.set_locale('en')
+
+func _on_spanish_button_pressed():
+	TranslationServer.set_locale('es')
+
+func _on_catalan_button_pressed():
+	TranslationServer.set_locale('ca')
+
 func _on_credits_end_reached():
 	if sub_menu == credits_scene:
 		_close_sub_menu()

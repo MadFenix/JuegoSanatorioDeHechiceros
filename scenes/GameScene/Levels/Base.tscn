@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=3 uid="uid://4ionx33eq4yo"]
+
+[ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
+[ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
+[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_6rsmk"]
+[ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="3_yfgrd"]
+
+[node name="Base" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ry618")
+script = ExtResource("1_wiw80")
+
+[node name="BaseResume" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BaseResume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base"
+horizontal_alignment = 1
+
+[node name="BaseContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AutoZones" type="VBoxContainer" parent="BaseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/AutoZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="SchoolTexture" type="TextureRect" parent="BaseContainer/AutoZones/MarginContainer"]
+custom_minimum_size = Vector2(360, 450)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/AutoZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ReceptionTexture" type="TextureRect" parent="BaseContainer/AutoZones/MarginContainer2"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="TypesOfMagicZones" type="VBoxContainer" parent="BaseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AdivinationMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ThaumaturgyMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer2"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="MarginContainer3" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="EvocationMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer3"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="KnowledgeZones" type="VBoxContainer" parent="BaseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Mining" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Exploration" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer2"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="MarginContainer3" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Mysticism" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer3"]
+custom_minimum_size = Vector2(360, 192)
+layout_mode = 2
+texture = ExtResource("2_6rsmk")
+
+[node name="Summary" parent="BaseContainer" instance=ExtResource("3_yfgrd")]
+layout_mode = 2
+
+[connection signal="pressed" from="BaseContainer/Summary/MarginContainer6/GoToMapBtn" to="." method="_on_win_button_pressed"]
+
+[editable path="BaseContainer/Summary"]

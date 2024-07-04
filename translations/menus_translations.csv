@@ -1,0 +1,74 @@
+keys,en,fr,es,ca
+
+___ MAIN MENU,,,,
+
+Title,Sorcerers Sanatorium,Titre,Sanatorio de Hechiceros,Sanatori de Bruixots
+Subtitle,Darkness is unleashed in a world where humans and animals succumb to madness.\nOnly sorcerers can stop the plague.,Sous-titre,La oscuridad está desatada en un mundo donde humanos y animales sucumben a la locura.\nSolo los hechiceros pueden detener la plaga.,La foscor està desfermada en un món on humans i animals sucumbeixen a la bogeria.\nNomés els bruixots poden aturar la plaga.
+Play,Play,Jouer,Jugar,Jugar
+Optionss,Options,Options,Opciones,Opcions
+Credits,Credits,Crédits,Créditos,Crèdits
+Exit,Exit,Quitter,Salir,Sortir
+
+___ LOADING SCREEN,,,,
+Loading...,Loading...,Chargement...,Cargando...,Carregant...
+
+___ DIALOGS IN GAME,,,,
+
+You lose.,You lose.,Vous avez perdu.,Has perdido.,Has perdut.
+You won!,You won!,Vous avez gagné !,¡Has ganado!,Has guanyat!
+Thanks for playing!,Thanks for playing!,Merci d'avoir joué !,¡Gracias por jugar!,Gràcies per jugar!
+
+Exit Game,Exit Game,Quitter le jeu,Salir del juego,Sortir del joc
+Main Menu,Main Menu,Menu principal,Menú principal,Menú principal
+Restart,Restart,Recommencer,Reiniciar,Reiniciar
+Continue,Continue,Continuer,Continuar,Continuar
+Resume,Resume,Resume,Reanudar,Rependre
+Pause,Pause,Pause,Pausa,Pausa
+Menu,Menu,Menu,Menú,Menú
+
+Please Confirm...,Please Confirm...,Veuillez confirmer...,Por favor confirma...,Si us plau confirma...
+Go back to main menu?,Go back to main menu?,Retourner au menu principal ?,¿Volver al menú principal?,Tornar al menú principal?
+Quit the game?,Quit the game?,Quitter le jeu ?,¿Salir del juego?,Sortir del joc?
+Cancel,Cancel,Annuler,Cancelar,Cancel·lar
+OK,OK,OK,OK,D'acord
+
+___ OPTIONS MENU,,,,
+
+Controls,Controls,Contrôles,Controles,Controls
+Mouse Sensitivity :,Mouse Sensitivity :,Sensibilité souris :,Sensibilidad del ratón :,Sensibilitat del ratolí :
+Actions & Inputs,Actions & Inputs,Actions et contrôles,Acciones e inputs,Accions i entrades
+Add,Add,Ajouter,Añadir,Afegir
+Remove,Remove,Enlever,Eliminar,Eliminar
+Assign Key for {action},Assign Key for {action},Choisir le contrôle pour {action},Asignar tecla para {action},Assignar tecla per a {action}
+Listening for input...,Listening for input...,Appuyez sur un bouton...,Escuchando entrada...,Escoltant entrada...
+Press again to confirm...,Press again to confirm...,Appuyez encore pour confirmer...,Presiona de nuevo para confirmar...,Prem de nou per confirmar...
+Focus here to assign inputs.,Focus here to assign inputs.,Mettez le focus ici pour choisir le contrôle.,Enfócate aquí para asignar entradas.,Focalitza't aquí per assignar entrades.
+Already Assigned,Already Assigned,Déjà utilisé,Ya asignado,Ja assignat
+{key} already assigned to {action}.,{key} already assigned to {action}.,{key} est déjà utilisé pour {action}.,{key} ya asignada a {action}.,{key} ja assignada a {action}.
+Remove Key for {action},Remove Key for {action},Supprimer le contrôle pour {action},Eliminar tecla para {action},Eliminar tecla per a {action}
+Are you sure you want to remove {key} from {action}?,Are you sure you want to remove {key} from {action}?,Êtes-vous sûr de vouloir supprimer {key} pour {action} ?,¿Seguro que quieres eliminar {key} de {action}?,Segur que vols eliminar {key} de {action}?
+Reset,Reset,Réinitialiser,Restablecer,Restablir
+
+Audio,Audio,Audio,Audio,Àudio
+Master :,Master :,Principal :,Principal :,Principal :
+Music :,Music :,Musique :,Música :,Música :
+SFX :,SFX :,Effets :,Efectos :,Efectes :
+Mute :,Mute :,Silencieux :,Silencio :,Silenci :
+
+Video,Video,Vidéo,Video,Video
+Fullscreen :,Fullscreen :,Plein écran :,Pantalla completa :,Pantalla completa :
+Resolution :,Resolution :,Résolution :,Resolución :,Resolució :
+Anti-Aliasing :,Anti-Aliasing :,Anticrénelage :,Anti-Aliasing :,Anti-Aliasing :
+Disabled (Fastest),Disabled (Fastest),Désactivé (Plus rapide),Deshabilitado (Más rápido),Desactivat (Més ràpid)
+8x (Slowest),8x (Slowest),8x (Plus lent),8x (Más lento),8x (Més lent)
+Camera Shake :,Camera Shake :,Secousse Caméra :,Sacudida de la cámara :,Sacsejada de la càmera :
+Normal,Normal,Normale,Normal,Normal
+Reduced,Reduced,Réduite,Reducida,Reduïda
+Minimal,Minimal,Minimum,Mínima,Mínima
+None,None,Aucune,Ninguna,Cap
+
+Game,Game,Jeu,Juego,Joc
+Reset Game :,Reset Game :,Réinitialiser le jeu :,Restablecer juego :,Restablir joc :
+Do you want to reset your game data?,Do you want to reset your game data?,Voulez-vous réinitialiser votre partie ?,¿Quieres restablecer los datos de tu juego?,Vols restablir les dades del teu joc?
+
+Back,Back,Retour,Volver,Enrere

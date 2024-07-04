@@ -1,0 +1,152 @@
+[gd_scene load_steps=2 format=3 uid="uid://ysf7eug82liq"]
+
+[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="1_e7yua"]
+
+[node name="Summary" type="VBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AdivinationMagicians" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(65, 75)
+layout_mode = 2
+texture = ExtResource("1_e7yua")
+expand_mode = 1
+
+[node name="AMQuantity" type="Label" parent="MarginContainer/AdivinationMagicians"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x2"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ThaumaturgicMagicians" type="TextureRect" parent="MarginContainer2"]
+custom_minimum_size = Vector2(65, 75)
+layout_mode = 2
+texture = ExtResource("1_e7yua")
+expand_mode = 1
+
+[node name="TMQuantity" type="Label" parent="MarginContainer2/ThaumaturgicMagicians"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x2"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="EvocationMagicians" type="TextureRect" parent="MarginContainer3"]
+custom_minimum_size = Vector2(65, 75)
+layout_mode = 2
+texture = ExtResource("1_e7yua")
+expand_mode = 1
+
+[node name="EMQuantity" type="Label" parent="MarginContainer3/EvocationMagicians"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x2"
+horizontal_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Potions" type="TextureRect" parent="MarginContainer4"]
+custom_minimum_size = Vector2(65, 75)
+layout_mode = 2
+texture = ExtResource("1_e7yua")
+expand_mode = 1
+
+[node name="PQuantity" type="Label" parent="MarginContainer4/Potions"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x2"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer5"]
+layout_mode = 2
+
+[node name="Turn" type="Label" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Turn"
+horizontal_alignment = 1
+
+[node name="CurrentTurn" type="Label" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2 / 15
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer6" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GoToMapBtn" type="Button" parent="MarginContainer6"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Mapa"

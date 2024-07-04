@@ -62,6 +62,15 @@ func advance_and_load_level():
 	if advance_level():
 		load_level()
 
+func switch_level():
+	var level_id : int = get_current_level_id()
+	if level_id == 0:
+		level_id = 1
+	else:
+		level_id = 0
+	GameLevelLog.level_reached(level_id)
+	load_level()
+
 func _ready():
 	if Engine.is_editor_hint():
 		# Text files get a `.remap` extension added on export.

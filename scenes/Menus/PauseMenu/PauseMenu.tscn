@@ -1,10 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd86c2axyabh3"]
+[gd_scene load_steps=5 format=3 uid="uid://cd86c2axyabh3"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/extras/scenes/PauseMenu/PauseMenu.tscn" id="1_rcp1c"]
+[ext_resource type="PackedScene" uid="uid://cdwvtbtwmrqbn" path="res://addons/maaacks_game_template/extras/scenes/PauseMenu/PauseMenu.tscn" id="1_rcp1c"]
 [ext_resource type="Script" path="res://scenes/Menus/PauseMenu/PauseMenu.gd" id="2_qgi5e"]
-[ext_resource type="PackedScene" path="res://scenes/Menus/OptionsMenu/MiniOptionsMenuWithReset.tscn" id="3_nqfgs"]
+[ext_resource type="PackedScene" uid="uid://dsxgolcybukr6" path="res://scenes/Menus/OptionsMenu/MiniOptionsMenuWithReset.tscn" id="3_nqfgs"]
+[ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="4_18xdw"]
 
 [node name="PauseMenu" instance=ExtResource("1_rcp1c")]
 script = ExtResource("2_qgi5e")
 options_packed_scene = ExtResource("3_nqfgs")
 main_menu_scene = "res://scenes/Menus/MainMenu/MainMenuWithAnimations.tscn"
+
+[node name="MenuContainer" parent="." index="3"]
+theme = ExtResource("4_18xdw")
+
+[node name="SubMenuContainer" parent="." index="4"]
+theme = ExtResource("4_18xdw")
+
+[node name="ConfirmRestart" parent="." index="5"]
+theme = ExtResource("4_18xdw")
+
+[node name="ConfirmMainMenu" parent="." index="6"]
+theme = ExtResource("4_18xdw")
+
+[node name="ConfirmExit" parent="." index="7"]
+theme = ExtResource("4_18xdw")

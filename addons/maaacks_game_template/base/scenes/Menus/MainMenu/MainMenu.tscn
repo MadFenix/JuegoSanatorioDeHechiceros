@@ -106,8 +106,7 @@ text = "Play"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
-text = "Options
-"
+text = "Optionss"
 
 [node name="CreditsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
 unique_name_in_owner = true
@@ -120,6 +119,24 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Exit"
+
+[node name="LanguageButtons" type="HBoxContainer" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+layout_mode = 2
+
+[node name="EnglishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "English"
+
+[node name="SpanishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "Español"
+
+[node name="CatalanButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "Català"
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -173,4 +190,7 @@ text = "Back"
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons/EnglishButton" to="." method="_on_english_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons/SpanishButton" to="." method="_on_spanish_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons/CatalanButton" to="." method="_on_catalan_button_pressed"]
 [connection signal="pressed" from="FlowControlContainer/FlowControl/BackButton" to="." method="_on_back_button_pressed"]

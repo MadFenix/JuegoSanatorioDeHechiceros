@@ -10,7 +10,8 @@ func _on_level_lost():
 	InGameMenuController.open_menu(lose_scene, get_viewport())
 
 func _on_level_won():
-	$LevelLoader.advance_and_load_level()
+	#$LevelLoader.advance_and_load_level()
+	$LevelLoader.switch_level()
 
 func _on_level_loader_level_loaded():
 	await $LevelLoader.current_level.ready
