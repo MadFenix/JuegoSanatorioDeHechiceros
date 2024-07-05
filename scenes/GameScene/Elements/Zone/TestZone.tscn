@@ -7,10 +7,14 @@
 script = ExtResource("1_l1rel")
 
 [node name="Zone" parent="." instance=ExtResource("2_wvcwe")]
-form = Array[Vector2]([Vector2(0, 0), Vector2(0, 100), Vector2(50, 200), Vector2(100, 100), Vector2(100, 0)])
+
+[node name="CollisionPolygon2D" parent="Zone/Area2D" index="0"]
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 50, 150, 0, 100)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Zone"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ysf7eug82liq"]
+[gd_scene load_steps=3 format=3 uid="uid://ysf7eug82liq"]
 
 [ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="1_e7yua"]
+[ext_resource type="Script" path="res://scenes/GameScene/Summary.gd" id="1_qw761"]
 
 [node name="Summary" type="VBoxContainer"]
 size_flags_horizontal = 3
+script = ExtResource("1_qw761")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -132,7 +134,7 @@ horizontal_alignment = 1
 [node name="CurrentTurn" type="Label" parent="MarginContainer5/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "2 / 15
+text = "1 / 15
 "
 horizontal_alignment = 1
 
@@ -145,8 +147,45 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="GoToMapBtn" type="Button" parent="MarginContainer6"]
+[node name="PassTurn" type="Button" parent="MarginContainer6"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 8
-text = "Mapa"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer6/PassTurn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer6/PassTurn/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Next"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer6/PassTurn/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Turn"
+horizontal_alignment = 1
+
+[node name="MarginContainer7" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GoToMapBtn" type="Button" parent="MarginContainer7"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Map"
+
+[connection signal="pressed" from="MarginContainer6/PassTurn" to="." method="_on_pass_turn_pressed"]

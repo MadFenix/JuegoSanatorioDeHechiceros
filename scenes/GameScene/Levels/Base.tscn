@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=6 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
 [ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_6rsmk"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="3_yfgrd"]
+[ext_resource type="PackedScene" uid="uid://dlrtl565cb3a8" path="res://scenes/GameScene/Elements/Knowledge/Knowledge.tscn" id="4_fvy84"]
 
 [node name="Base" type="VBoxContainer"]
 anchors_preset = 15
@@ -104,10 +105,10 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Mining" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer"]
-custom_minimum_size = Vector2(360, 192)
+[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer" instance=ExtResource("4_fvy84")]
 layout_mode = 2
-texture = ExtResource("2_6rsmk")
+knowledge_type = 0
+turns_needed_to_levelup = Array[int]([1, 1, 1, 1])
 
 [node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
 layout_mode = 2
@@ -116,10 +117,10 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Exploration" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer2"]
-custom_minimum_size = Vector2(360, 192)
+[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer2" instance=ExtResource("4_fvy84")]
 layout_mode = 2
-texture = ExtResource("2_6rsmk")
+knowledge_type = 1
+turns_needed_to_levelup = Array[int]([1, 2, 2, 2])
 
 [node name="MarginContainer3" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
 layout_mode = 2
@@ -128,14 +129,14 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Mysticism" type="TextureRect" parent="BaseContainer/KnowledgeZones/MarginContainer3"]
-custom_minimum_size = Vector2(360, 192)
+[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer3" instance=ExtResource("4_fvy84")]
 layout_mode = 2
-texture = ExtResource("2_6rsmk")
+knowledge_type = 2
+turns_needed_to_levelup = Array[int]([2, 2, 2, 2])
 
 [node name="Summary" parent="BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
 
-[connection signal="pressed" from="BaseContainer/Summary/MarginContainer6/GoToMapBtn" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="BaseContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
 
 [editable path="BaseContainer/Summary"]

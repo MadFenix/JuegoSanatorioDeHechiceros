@@ -1,3 +1,4 @@
+class_name ZoneClass
 extends Node2D
 
 """
@@ -21,23 +22,13 @@ Zona:
 @export var adivination_required : int = 1
 @export var thaumaturgy_required : int = 1
 @export var evocation_required : int = 0
-@export var form : Array[Vector2] = [
-	Vector2(0, 0),
-	Vector2(0, 100),
-	Vector2(100, 100),
-	Vector2(100, 0),
-] :
-	set(valor):
-		form = valor
-		load_form()
-	get:
-		return form
+@export var turn_to_ill : int = 0
 
 var states = ["sana", "enferma", "curada"]
 var statesColors = [
 	Color(0, 0, 0, 0),
-	Color(102, 51, 153, 0.5),
-	Color(0, 128, 0, 0.5)
+	Color(0.4, 0.2, 0.6, 0.5),
+	Color(0, 0.5, 0, 0.5)
 ]
 
 # Pociones y magos asignados a la zona
@@ -47,17 +38,18 @@ var evocation_assigned : int = 0
 var current_potions : int = 0
 
 var dialogue : String # Diálogo que se mostrará al terminar el turno
-var last_state : String = ""
+var last_state : int = 0
+
+var popup_open
 
 func _ready():
 	# Conectar señales de GameState
-	GameState.nextTurn.connect(nextTurn)
-	
-	update_dialogue() # Actualizar el diálogo inicial
+	GameState.nextTurn.connect(nextTurn)	
+	load_form()
+	nextTurn()
 
 func load_form():
-	$Area2D/CollisionPolygon2D.polygon = form
-	$Area2D/Polygon2D.polygon = form
+	$Area2D/Polygon2D.polygon = $Area2D/CollisionPolygon2D.polygon
 
 func load_state():
 	$Area2D/Polygon2D.color = statesColors[state]
@@ -102,9 +94,20 @@ func update_dialogue() -> void:
 		dialogue = "La zona ha sido curada. ¡Felicidades!"
 
 func nextTurn() -> void:
+	if GameState.currentTurn == turn_to_ill:
+		state = 1
 	set_state()  # Verificar si la zona se cura
 	update_dialogue()  # Actualizar diálogo
 
 func changeStateToIll() -> void:
 	# Cambia el estado de la zona a enferma
 	state = 1 # "enferma"
+
+func showDialog():
+	%ZoneDialog.title = zoneName
+	%ZoneDialog.dialog_text = dialogue
+	%ZoneDialog.popup_centered()
+	popup_open = %ZoneDialog
+
+func _on_area_2d_mouse_entered():
+	GameState.currentZone = self

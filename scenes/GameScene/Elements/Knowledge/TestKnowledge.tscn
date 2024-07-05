@@ -12,12 +12,16 @@ turns_needed_to_levelup = Array[int]([1, 2, 3])
 pause = false
 
 [node name="Exploration" parent="." instance=ExtResource("2_in5jk")]
-position = Vector2(0, 100)
+offset_top = 200.0
+offset_right = 360.0
+offset_bottom = 392.0
 knowledge_type = 1
 turns_needed_to_levelup = Array[int]([1, 2, 2])
 
 [node name="Misticismo" parent="." instance=ExtResource("2_in5jk")]
-position = Vector2(0, 200)
+offset_top = 400.0
+offset_right = 360.0
+offset_bottom = 592.0
 knowledge_type = 2
 turns_needed_to_levelup = Array[int]([1, 1, 2])
 

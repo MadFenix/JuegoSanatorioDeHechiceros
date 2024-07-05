@@ -13,3 +13,5 @@ polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(0, 0, 0, 100, 100, 100, 100, 0)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

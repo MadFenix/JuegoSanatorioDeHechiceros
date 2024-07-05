@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 signal levelup()
 signal progress_add()
@@ -63,7 +63,7 @@ func _ready() -> void:
 	GameState.nextTurn.connect(progress_knowledge)
 
 func label_refresh():
-	$VBoxContainer/Label.text = dic_knowledge[knowledge_type]
+	$VBoxContainer/HBoxContainer/Label.text = dic_knowledge[knowledge_type]
 
 func progress_refresh():
 	$VBoxContainer/ProgressBar.value = progress / turns_needed_to_levelup[level_knowledge - 1] * 100

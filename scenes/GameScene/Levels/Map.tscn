@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1pdv76fc2dve"]
+[gd_scene load_steps=6 format=3 uid="uid://1pdv76fc2dve"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_h8die"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_uh81n"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="2_3weym"]
-[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="3_534nh"]
+[ext_resource type="Texture2D" uid="uid://bijfot2ph2xq4" path="res://assets/images/mapa.png" id="4_qif24"]
+[ext_resource type="PackedScene" uid="uid://bdigkhvu1rabp" path="res://scenes/GameScene/Elements/Zone/Zone.tscn" id="5_cmwqh"]
 
 [node name="Map" type="VBoxContainer"]
 anchors_preset = 15
@@ -20,7 +21,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MapResume"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Mapa"
+text = "Map"
 horizontal_alignment = 1
 
 [node name="MapContainer" type="HBoxContainer" parent="."]
@@ -31,7 +32,7 @@ size_flags_vertical = 3
 [node name="Summary" parent="MapContainer" instance=ExtResource("2_3weym")]
 layout_mode = 2
 
-[node name="GoToMapBtn" parent="MapContainer/Summary/MarginContainer6" index="0"]
+[node name="GoToMapBtn" parent="MapContainer/Summary/MarginContainer7" index="0"]
 text = "Base"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MapContainer"]
@@ -41,11 +42,117 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Mysticism" type="TextureRect" parent="MapContainer/MarginContainer3"]
+[node name="Mapa" type="TextureRect" parent="MapContainer/MarginContainer3"]
 custom_minimum_size = Vector2(1120, 100)
 layout_mode = 2
-texture = ExtResource("3_534nh")
+texture = ExtResource("4_qif24")
 
-[connection signal="pressed" from="MapContainer/Summary/MarginContainer6/GoToMapBtn" to="." method="_on_win_button_pressed"]
+[node name="Zone1" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 1"
+adivination_required = 2
+thaumaturgy_required = 2
+turn_to_ill = 1
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone1/Area2D" index="0"]
+polygon = PackedVector2Array(0, 0, 150, 0, 230, 85, 230, 120, 251, 152, 322, 152, 322, 212, 360, 249, 133, 248, 77, 358, 0, 359)
+
+[node name="Zone2" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 2"
+adivination_required = 4
+thaumaturgy_required = 2
+evocation_required = 2
+turn_to_ill = 3
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone2/Area2D" index="0"]
+polygon = PackedVector2Array(150, 0, 230, 85, 230, 103, 230, 120, 251, 152, 322, 152, 322, 213, 360, 249, 444, 255, 506, 204, 506, 0)
+
+[node name="Zone3" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 3"
+evocation_required = 1
+turn_to_ill = 9
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone3/Area2D" index="0"]
+polygon = PackedVector2Array(506, 0, 506, 203, 531, 204, 536, 211, 765, 210, 764, 104, 909, 103, 958, 151, 1120, 151, 1120, 0)
+
+[node name="Zone4" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 4"
+adivination_required = 2
+thaumaturgy_required = 6
+evocation_required = 6
+turn_to_ill = 1
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone4/Area2D" index="0"]
+polygon = PackedVector2Array(764, 104, 765, 209, 851, 250, 853, 271, 810, 290, 783, 381, 833, 404, 820, 418, 921, 420, 958, 343, 1027, 309, 1071, 332, 1072, 346, 1121, 394, 1120, 151, 960, 151, 908, 103)
+
+[node name="Zone5" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 5"
+adivination_required = 6
+thaumaturgy_required = 6
+evocation_required = 6
+turn_to_ill = 8
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone5/Area2D" index="0"]
+polygon = PackedVector2Array(958, 343, 876, 512, 874, 633, 914, 666, 1120, 665, 1121, 394, 1072, 346, 1071, 333, 1027, 309)
+
+[node name="Zone6" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 6"
+adivination_required = 9
+thaumaturgy_required = 5
+evocation_required = 2
+turn_to_ill = 7
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone6/Area2D" index="0"]
+polygon = PackedVector2Array(820, 415, 806, 430, 659, 430, 604, 533, 558, 533, 512, 488, 444, 487, 460, 519, 460, 532, 489, 555, 497, 594, 506, 598, 505, 616, 497, 628, 495, 667, 911, 665, 875, 634, 875, 512, 920, 420)
+
+[node name="Zone7" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 7"
+adivination_required = 2
+thaumaturgy_required = 4
+evocation_required = 2
+turn_to_ill = 2
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone7/Area2D" index="0"]
+polygon = PackedVector2Array(512, 488, 557, 533, 604, 533, 659, 430, 807, 429, 834, 405, 784, 381, 811, 288, 854, 269, 851, 250, 766, 209, 539, 210, 623, 296, 581, 376, 514, 375)
+
+[node name="Zone8" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 8"
+adivination_required = 5
+thaumaturgy_required = 5
+evocation_required = 5
+turn_to_ill = 5
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone8/Area2D" index="0"]
+polygon = PackedVector2Array(514, 375, 513, 488, 442, 487, 441, 467, 427, 459, 427, 427, 252, 427, 127, 303, 125, 262, 133, 248, 361, 248, 441, 255, 435, 299, 472, 376)
+
+[node name="Zone9" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 9"
+adivination_required = 9
+thaumaturgy_required = 9
+evocation_required = 9
+turn_to_ill = 10
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone9/Area2D" index="0"]
+polygon = PackedVector2Array(252, 427, 427, 427, 427, 459, 439, 467, 441, 487, 459, 518, 459, 533, 490, 557, 496, 595, 505, 599, 505, 618, 495, 630, 495, 666, -2, 665, 0, 358, 76, 358, 126, 263, 126, 303)
+
+[node name="Zone10" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
+zoneName = "Zona 10"
+
+[node name="CollisionPolygon2D" parent="MapContainer/MarginContainer3/Mapa/Zone10/Area2D" index="0"]
+polygon = PackedVector2Array(441, 255, 435, 298, 473, 376, 582, 376, 623, 296, 540, 211, 536, 211, 530, 204, 507, 203)
+
+[node name="ZoneDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="MapContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
 
 [editable path="MapContainer/Summary"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone1"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone2"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone3"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone4"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone5"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone6"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone7"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone8"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone9"]
+[editable path="MapContainer/MarginContainer3/Mapa/Zone10"]
