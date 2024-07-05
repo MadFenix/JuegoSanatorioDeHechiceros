@@ -12,7 +12,7 @@ signal addPotion()
 
 var currentLevel : String
 
-var currentZone : int
+var currentZone : int = 0
 
 var currentTurn = 1
 var miningLevel = 1

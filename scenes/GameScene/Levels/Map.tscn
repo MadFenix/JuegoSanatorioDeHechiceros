@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://1pdv76fc2dve"]
+[gd_scene load_steps=8 format=3 uid="uid://1pdv76fc2dve"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_h8die"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_uh81n"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="2_3weym"]
 [ext_resource type="Texture2D" uid="uid://bijfot2ph2xq4" path="res://assets/images/mapa.png" id="4_qif24"]
 [ext_resource type="PackedScene" uid="uid://bdigkhvu1rabp" path="res://scenes/GameScene/Elements/Zone/Zone.tscn" id="5_cmwqh"]
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/Zone/Mapa.gd" id="5_vtr6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5n6y"]
+size = Vector2(1137, 685.5)
 
 [node name="Map" type="VBoxContainer"]
 anchors_preset = 15
@@ -46,6 +50,13 @@ theme_override_constants/margin_bottom = 15
 custom_minimum_size = Vector2(1120, 100)
 layout_mode = 2
 texture = ExtResource("4_qif24")
+script = ExtResource("5_vtr6g")
+
+[node name="Area2D" type="Area2D" parent="MapContainer/MarginContainer3/Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapContainer/MarginContainer3/Mapa/Area2D"]
+position = Vector2(558.5, 332.75)
+shape = SubResource("RectangleShape2D_x5n6y")
 
 [node name="Zone1" parent="MapContainer/MarginContainer3/Mapa" instance=ExtResource("5_cmwqh")]
 unique_name_in_owner = true
@@ -164,6 +175,7 @@ polygon = PackedVector2Array(441, 255, 435, 298, 473, 376, 582, 376, 623, 296, 5
 unique_name_in_owner = true
 
 [connection signal="pressed" from="MapContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
+[connection signal="mouse_exited" from="MapContainer/MarginContainer3/Mapa/Area2D" to="MapContainer/MarginContainer3/Mapa" method="_on_area_2d_mouse_exited"]
 
 [editable path="MapContainer/Summary"]
 [editable path="MapContainer/MarginContainer3/Mapa/Zone1"]

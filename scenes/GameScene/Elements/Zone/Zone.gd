@@ -78,7 +78,7 @@ func set_state() -> void:
 		state = 0 # sana
 		GameState.emit_signal("zoneChanged")
 
-	if GameState.currentTurn >= turn_to_ill and state != 2:
+	if GameState.currentTurn == turn_to_ill:
 		state = 1
 
 func update_dialogue() -> void:
@@ -91,7 +91,6 @@ func update_dialogue() -> void:
 		dialogue = "La zona ha sido curada. ¡Felicidades!"
 
 func nextTurn() -> void:
-
 	set_state()
 	update_dialogue()
 	# Guardar el estado de la zona al final del turno
