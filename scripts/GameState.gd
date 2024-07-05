@@ -10,7 +10,9 @@ signal zoneChanged()
 signal addWizard()
 signal addPotion()
 
-var currentZone : ZoneClass
+var currentLevel : String
+
+var currentZone : int
 
 var currentTurn = 1
 var miningLevel = 1

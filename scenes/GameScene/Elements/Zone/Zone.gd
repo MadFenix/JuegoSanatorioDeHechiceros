@@ -23,6 +23,7 @@ Zona:
 @export var thaumaturgy_required : int = 1
 @export var evocation_required : int = 0
 @export var turn_to_ill : int = 0
+@export var zoneNumber : int = 0
 
 var states = ["sana", "enferma", "curada"]
 var statesColors = [
@@ -110,4 +111,4 @@ func showDialog():
 	popup_open = %ZoneDialog
 
 func _on_area_2d_mouse_entered():
-	GameState.currentZone = self
+	GameState.currentZone = zoneNumber

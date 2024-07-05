@@ -66,8 +66,10 @@ func switch_level():
 	var level_id : int = get_current_level_id()
 	if level_id == 0:
 		level_id = 1
+		GameState.currentLevel = 'Map'
 	else:
 		level_id = 0
+		GameState.currentLevel = 'Base'
 	GameLevelLog.level_reached(level_id)
 	load_level()
 

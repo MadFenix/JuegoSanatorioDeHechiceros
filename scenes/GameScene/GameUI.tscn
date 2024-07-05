@@ -31,7 +31,7 @@ pause_menu_packed = ExtResource("5_86gef")
 [node name="LevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
 script = ExtResource("6_y03ga")
 level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
-files = Array[String](["res://scenes/GameScene/Levels/Map.tscn", "res://scenes/GameScene/Levels/Base.tscn"])
+files = Array[String](["res://scenes/GameScene/Levels/Base.tscn", "res://scenes/GameScene/Levels/Map.tscn"])
 directory = "res://scenes/GameScene/Levels"
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("7_aibl4")]
@@ -52,6 +52,7 @@ stretch = true
 handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
+physics_object_picking = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 script = ExtResource("9_ba104")
