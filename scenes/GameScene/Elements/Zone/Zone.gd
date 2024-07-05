@@ -91,8 +91,7 @@ func update_dialogue() -> void:
 		dialogue = "La zona ha sido curada. ¡Felicidades!"
 
 func nextTurn() -> void:
-	if GameState.currentTurn == turn_to_ill:
-		state = 1
+
 	set_state()
 	update_dialogue()
 	# Guardar el estado de la zona al final del turno
