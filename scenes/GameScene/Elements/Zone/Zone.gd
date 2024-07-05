@@ -1,16 +1,6 @@
 class_name ZoneClass
 extends Node2D
 
-"""
-Zona:
-
-	- Tiene que haber un sistema de cantidad de magos por tipo necesarios para curar la zona.
-	- Sistema para saber si la zona está enferma, curada o sin afectaciones.
-	- Si está enferma, tiene que haber un sistema para, al arrastrar magos o pociones, llenar los requerimientos y definir si se cura o no en ese turno la zona.
-	- Tiene que tener un sistema de diálogo para cuando la zona se enferma y también para cuando se cura.
-
-"""
-
 @export var zoneName : String 
 @export_enum ("sana", "enferma", "curada") var state = 0 : # Estado inicial por defecto
 	set(valor):
@@ -18,6 +8,7 @@ Zona:
 		load_state()
 	get:
 		return state
+
 # Magos necesarios por tipo para curar la zona
 @export var adivination_required : int = 1
 @export var thaumaturgy_required : int = 1
@@ -45,8 +36,14 @@ var popup_open
 
 func _ready():
 	# Conectar señales de GameState
-	GameState.nextTurn.connect(nextTurn)	
+	GameState.nextTurn.connect(nextTurn)    
 	load_form()
+	
+	# Cargar el estado guardado si existe
+	if StateManager.has_zone_state(zoneName):
+		var saved_state = StateManager.load_zone_state(zoneName)
+		restore_state(saved_state)
+	
 	nextTurn()
 
 func load_form():
@@ -74,19 +71,18 @@ func assign_potions(amount: int) -> void:
 
 func set_state() -> void:
 	last_state = state
-	# Si hay suficientes magos asignados, la zona se cura
 	if thaumaturgy_assigned >= thaumaturgy_required and adivination_assigned >= adivination_required and evocation_assigned >= evocation_required:
 		state = 2 # curada
-		GameState.emit_signal("zoneChanged")  # Emitir señal de cambio de estado
-	if last_state == state and state != 1: # != enferma
+		GameState.emit_signal("zoneChanged")
+	if last_state == state and state != 1:
 		state = 0 # sana
-		GameState.emit_signal("zoneChanged")  # Emitir señal de cambio de estado
-	
+		GameState.emit_signal("zoneChanged")
+
+	if GameState.currentTurn >= turn_to_ill and state != 2:
+		state = 1
 
 func update_dialogue() -> void:
-	if states[state] == "enferma":        
-		# Devuelve la cantidad de magos necesarios por tipo para curar la zona
-		# Formato de retorno: Taumaturgos, Adivinos, Evocadores
+	if states[state] == "enferma":
 		var thaumaturgy_needed = max(0, thaumaturgy_required - thaumaturgy_assigned)
 		var adivination_needed = max(0, adivination_required - adivination_assigned)
 		var evocation_needed = max(0, evocation_required - evocation_assigned)
@@ -97,12 +93,13 @@ func update_dialogue() -> void:
 func nextTurn() -> void:
 	if GameState.currentTurn == turn_to_ill:
 		state = 1
-	set_state()  # Verificar si la zona se cura
-	update_dialogue()  # Actualizar diálogo
+	set_state()
+	update_dialogue()
+	# Guardar el estado de la zona al final del turno
+	save_state()
 
 func changeStateToIll() -> void:
-	# Cambia el estado de la zona a enferma
-	state = 1 # "enferma"
+	state = 1
 
 func showDialog():
 	%ZoneDialog.title = zoneName
@@ -112,3 +109,27 @@ func showDialog():
 
 func _on_area_2d_mouse_entered():
 	GameState.currentZone = zoneNumber
+
+# Método para guardar el estado de la zona
+func save_state():
+	var state_data = {
+		"state": state,
+		"adivination_assigned": adivination_assigned,
+		"thaumaturgy_assigned": thaumaturgy_assigned,
+		"evocation_assigned": evocation_assigned,
+		"current_potions": current_potions,
+		"dialogue": dialogue,
+		"last_state": last_state
+	}
+	StateManager.save_zone_state(zoneName, state_data)
+
+# Método para restaurar el estado de la zona
+func restore_state(state_data: Dictionary):
+	state = state_data["state"]
+	adivination_assigned = state_data["adivination_assigned"]
+	thaumaturgy_assigned = state_data["thaumaturgy_assigned"]
+	evocation_assigned = state_data["evocation_assigned"]
+	current_potions = state_data["current_potions"]
+	dialogue = state_data["dialogue"]
+	last_state = state_data["last_state"]
+	load_state()
