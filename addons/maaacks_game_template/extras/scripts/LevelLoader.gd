@@ -74,6 +74,7 @@ func switch_level():
 	load_level()
 
 func _ready():
+	GameLevelLog.level_reached(0)
 	if Engine.is_editor_hint():
 		# Text files get a `.remap` extension added on export.
 		_refresh_files()

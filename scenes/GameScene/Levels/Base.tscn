@@ -1,142 +1,212 @@
-[gd_scene load_steps=6 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=13 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
-[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_6rsmk"]
+[ext_resource type="Texture2D" uid="uid://ce28lke1ifgrc" path="res://assets/images/rooms/room_school.png" id="3_k4v3v"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="3_yfgrd"]
 [ext_resource type="PackedScene" uid="uid://dlrtl565cb3a8" path="res://scenes/GameScene/Elements/Knowledge/Knowledge.tscn" id="4_fvy84"]
+[ext_resource type="Texture2D" uid="uid://b0fes2m32023q" path="res://assets/images/rooms/room_reception.png" id="4_pqfio"]
+[ext_resource type="Texture2D" uid="uid://dvl3o1nvrrgkp" path="res://assets/images/rooms/room_adivination.png" id="5_5m4v8"]
+[ext_resource type="Texture2D" uid="uid://cam3umybj0mpo" path="res://assets/images/rooms/room_evocation.png" id="6_dds1a"]
+[ext_resource type="Texture2D" uid="uid://q1b3o3j2mp4b" path="res://assets/images/rooms/room_thaumaturgy.png" id="7_ve25c"]
+[ext_resource type="Texture2D" uid="uid://bfctp5yignkga" path="res://assets/images/rooms/room_minning.png" id="9_nxa8a"]
+[ext_resource type="Texture2D" uid="uid://bvfugc7pi471r" path="res://assets/images/rooms/room_mysticism.png" id="10_7lopr"]
+[ext_resource type="Texture2D" uid="uid://b2iou08eijjy2" path="res://assets/images/rooms/room_exploration.png" id="11_fhqsv"]
 
-[node name="Base" type="VBoxContainer"]
+[node name="Base" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_ry618")
 script = ExtResource("1_wiw80")
 
-[node name="BaseResume" type="HBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.294118, 0.172549, 0.305882, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 725.0
+
+[node name="BaseResume" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BaseResume"]
+[node name="Label" type="Label" parent="VBoxContainer/BaseResume"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Base"
 horizontal_alignment = 1
 
-[node name="BaseContainer" type="HBoxContainer" parent="."]
+[node name="BaseContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AutoZones" type="VBoxContainer" parent="BaseContainer"]
+[node name="AutoZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/AutoZones"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="SchoolTexture" type="TextureRect" parent="BaseContainer/AutoZones/MarginContainer"]
-custom_minimum_size = Vector2(360, 450)
+[node name="SchoolTexture" type="TextureRect" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer"]
+custom_minimum_size = Vector2(380, 450)
 layout_mode = 2
-texture = ExtResource("2_6rsmk")
+texture = ExtResource("3_k4v3v")
 
-[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/AutoZones"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 25.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+size_flags_vertical = 3
 
-[node name="ReceptionTexture" type="TextureRect" parent="BaseContainer/AutoZones/MarginContainer2"]
-custom_minimum_size = Vector2(360, 160)
+[node name="SchoolTitle" type="Label" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_6rsmk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "School"
+horizontal_alignment = 1
 
-[node name="TypesOfMagicZones" type="VBoxContainer" parent="BaseContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones"]
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
+[node name="ReceptionTexture" type="TextureRect" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2"]
+custom_minimum_size = Vector2(380, 198)
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+texture = ExtResource("4_pqfio")
 
-[node name="AdivinationMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer"]
-custom_minimum_size = Vector2(360, 192)
-layout_mode = 2
-texture = ExtResource("2_6rsmk")
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="ThaumaturgyMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer2"]
-custom_minimum_size = Vector2(360, 192)
-layout_mode = 2
-texture = ExtResource("2_6rsmk")
-
-[node name="MarginContainer3" type="MarginContainer" parent="BaseContainer/TypesOfMagicZones"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="EvocationMagic" type="TextureRect" parent="BaseContainer/TypesOfMagicZones/MarginContainer3"]
-custom_minimum_size = Vector2(360, 192)
-layout_mode = 2
-texture = ExtResource("2_6rsmk")
-
-[node name="KnowledgeZones" type="VBoxContainer" parent="BaseContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
+[node name="ReceptionTitle" type="Label" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reception"
+horizontal_alignment = 1
 
-[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer" instance=ExtResource("4_fvy84")]
+[node name="TypesOfMagicZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AdivinationMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer"]
+custom_minimum_size = Vector2(380, 212)
+layout_mode = 2
+texture = ExtResource("5_5m4v8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="EvocationMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2"]
+custom_minimum_size = Vector2(380, 212)
+layout_mode = 2
+texture = ExtResource("6_dds1a")
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ThaumaturgyMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3"]
+custom_minimum_size = Vector2(380, 212)
+layout_mode = 2
+texture = ExtResource("7_ve25c")
+
+[node name="KnowledgeZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Knowledge" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer" instance=ExtResource("4_fvy84")]
 layout_mode = 2
 knowledge_type = 0
-turns_needed_to_levelup = Array[int]([1, 1, 1, 1])
-
-[node name="MarginContainer2" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer2" instance=ExtResource("4_fvy84")]
-layout_mode = 2
-knowledge_type = 1
 turns_needed_to_levelup = Array[int]([1, 2, 2, 2])
 
-[node name="MarginContainer3" type="MarginContainer" parent="BaseContainer/KnowledgeZones"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/Knowledge" index="0"]
+texture_normal = ExtResource("9_nxa8a")
 
-[node name="Knowledge" parent="BaseContainer/KnowledgeZones/MarginContainer3" instance=ExtResource("4_fvy84")]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Knowledge" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3" instance=ExtResource("4_fvy84")]
 layout_mode = 2
 knowledge_type = 2
 turns_needed_to_levelup = Array[int]([2, 2, 2, 2])
 
-[node name="Summary" parent="BaseContainer" instance=ExtResource("3_yfgrd")]
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/Knowledge" index="0"]
+texture_normal = ExtResource("10_7lopr")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Knowledge2" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2" instance=ExtResource("4_fvy84")]
+layout_mode = 2
+knowledge_type = 1
+turns_needed_to_levelup = Array[int]([1, 1, 1, 1])
+
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/Knowledge2" index="0"]
+texture_normal = ExtResource("11_fhqsv")
+
+[node name="Summary" parent="VBoxContainer/BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
 
-[connection signal="pressed" from="BaseContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BaseContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
 
-[editable path="BaseContainer/Summary"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/Knowledge"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/Knowledge"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/Knowledge2"]
+[editable path="VBoxContainer/BaseContainer/Summary"]

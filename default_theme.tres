@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bv2a6wh6lyl20"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bv2a6wh6lyl20"]
 
 [ext_resource type="FontFile" uid="uid://mijqax3pl5nw" path="res://assets/font/MikeruFullComicRm-Regular.otf" id="1_pjqht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrunq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfboc"]
+bg_color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [resource]
 Button/font_sizes/font_size = 26
 Button/fonts/font = ExtResource("1_pjqht")
 Label/font_sizes/font_size = 26
 Label/fonts/font = ExtResource("1_pjqht")
+ProgressBar/font_sizes/font_size = 8
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_qrunq")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_bfboc")

@@ -106,6 +106,7 @@ func showDialog():
 	popup_open = %ZoneDialog
 
 func _on_area_2d_mouse_entered():
+	print(zoneNumber)
 	GameState.currentZone = zoneNumber
 
 # Método para guardar el estado de la zona
