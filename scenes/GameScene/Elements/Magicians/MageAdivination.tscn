@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://c24ctqhn3rmld"]
+
+[ext_resource type="Texture2D" uid="uid://cs1l47l8r4y5t" path="res://assets/images/mages/mage_adivination.png" id="1_r7js0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xak6t"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(0, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4lo7"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(24, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijoip"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(48, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmml4"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(72, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs7qi"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(96, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyset"]
+atlas = ExtResource("1_r7js0")
+region = Rect2(120, 0, 24, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sw803"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xak6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4lo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijoip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmml4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs7qi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyset")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MageAdivination" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sw803")
+autoplay = "default"
+frame = 3
+frame_progress = 0.327272

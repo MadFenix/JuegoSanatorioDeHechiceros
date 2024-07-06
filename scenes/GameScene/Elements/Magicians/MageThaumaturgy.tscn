@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://8vfe82kbx5bi"]
+
+[ext_resource type="Texture2D" uid="uid://0fhwhhed6745" path="res://assets/images/mages/mage_thaumaturgic.png" id="1_sc251"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78x6k"]
+atlas = ExtResource("1_sc251")
+region = Rect2(0, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gawm1"]
+atlas = ExtResource("1_sc251")
+region = Rect2(24, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlqvr"]
+atlas = ExtResource("1_sc251")
+region = Rect2(48, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bncyk"]
+atlas = ExtResource("1_sc251")
+region = Rect2(72, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d701"]
+atlas = ExtResource("1_sc251")
+region = Rect2(96, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sbo7"]
+atlas = ExtResource("1_sc251")
+region = Rect2(120, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ulh"]
+atlas = ExtResource("1_sc251")
+region = Rect2(144, 0, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awnqg"]
+atlas = ExtResource("1_sc251")
+region = Rect2(168, 0, 24, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jrqsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78x6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gawm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlqvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bncyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d701")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sbo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ulh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awnqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MageThaumaturgy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jrqsy")
+autoplay = "default"
+frame = 6
+frame_progress = 0.916185

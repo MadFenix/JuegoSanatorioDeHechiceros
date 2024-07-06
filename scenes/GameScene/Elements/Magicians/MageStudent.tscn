@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://ba2in3823ab1d"]
+
+[ext_resource type="Texture2D" uid="uid://hidvnvfiih3f" path="res://assets/images/mages/mage_student.png" id="1_np68c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sryb1"]
+atlas = ExtResource("1_np68c")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyd1l"]
+atlas = ExtResource("1_np68c")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj7xw"]
+atlas = ExtResource("1_np68c")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0qx8"]
+atlas = ExtResource("1_np68c")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjoye"]
+atlas = ExtResource("1_np68c")
+region = Rect2(128, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dlbg"]
+atlas = ExtResource("1_np68c")
+region = Rect2(160, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j5q3"]
+atlas = ExtResource("1_np68c")
+region = Rect2(192, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wky2n"]
+atlas = ExtResource("1_np68c")
+region = Rect2(224, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koojq"]
+atlas = ExtResource("1_np68c")
+region = Rect2(256, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u8hj"]
+atlas = ExtResource("1_np68c")
+region = Rect2(288, 0, 32, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbsnx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sryb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyd1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj7xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0qx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjoye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dlbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j5q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wky2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koojq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u8hj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MageStudent" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bbsnx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.241946

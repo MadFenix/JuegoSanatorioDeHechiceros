@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://lam3gqva5247"]
+
+[ext_resource type="Texture2D" uid="uid://d1ncru3p566oe" path="res://assets/images/mages/mage_recepcionist.png" id="1_djo5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm2x3"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4b5o"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrh4o"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjvhc"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypsr0"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e18r3"]
+atlas = ExtResource("1_djo5g")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_humat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm2x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4b5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrh4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjvhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypsr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e18r3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MageReceptionist" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_humat")
+autoplay = "default"
+frame_progress = 0.125308
