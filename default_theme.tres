@@ -8,6 +8,8 @@
 bg_color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [resource]
+default_font = ExtResource("1_pjqht")
+default_font_size = 26
 Button/font_sizes/font_size = 26
 Button/fonts/font = ExtResource("1_pjqht")
 Label/font_sizes/font_size = 26
