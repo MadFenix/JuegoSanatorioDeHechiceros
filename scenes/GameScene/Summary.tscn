@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ysf7eug82liq"]
+[gd_scene load_steps=8 format=3 uid="uid://ysf7eug82liq"]
 
-[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="1_e7yua"]
 [ext_resource type="Script" path="res://scenes/GameScene/Summary.gd" id="1_qw761"]
+[ext_resource type="PackedScene" uid="uid://c24ctqhn3rmld" path="res://scenes/GameScene/Elements/Magicians/MageAdivination.tscn" id="2_poo02"]
+[ext_resource type="PackedScene" uid="uid://8vfe82kbx5bi" path="res://scenes/GameScene/Elements/Magicians/MageThaumaturgy.tscn" id="3_68o4f"]
+[ext_resource type="PackedScene" uid="uid://c4lxgse0mjau" path="res://scenes/GameScene/Elements/Magicians/MageEvocation.tscn" id="4_84q2j"]
+[ext_resource type="Texture2D" uid="uid://cw5qny57ljtp3" path="res://assets/images/potion.png" id="5_8p2a3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx2af"]
+atlas = ExtResource("5_8p2a3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aruxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx2af")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Summary" type="VBoxContainer"]
 size_flags_horizontal = 3
@@ -10,108 +28,102 @@ script = ExtResource("1_qw761")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="AdivinationMagicians" type="TextureRect" parent="MarginContainer"]
-custom_minimum_size = Vector2(65, 75)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_e7yua")
-expand_mode = 1
 
-[node name="AMQuantity" type="Label" parent="MarginContainer/AdivinationMagicians"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="MageAdivination" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_poo02")]
+position = Vector2(10, 5)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/MageAdivination" index="0"]
+autoplay = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="AMQuantity" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 text = "x2"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="ThaumaturgicMagicians" type="TextureRect" parent="MarginContainer2"]
-custom_minimum_size = Vector2(65, 75)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("1_e7yua")
-expand_mode = 1
 
-[node name="TMQuantity" type="Label" parent="MarginContainer2/ThaumaturgicMagicians"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="MageThaumaturgy" parent="MarginContainer2/HBoxContainer" instance=ExtResource("3_68o4f")]
+position = Vector2(10, 5)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="MarginContainer2/HBoxContainer/MageThaumaturgy" index="0"]
+autoplay = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TMQuantity" type="Label" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
 text = "x2"
 horizontal_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="EvocationMagicians" type="TextureRect" parent="MarginContainer3"]
-custom_minimum_size = Vector2(65, 75)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
 layout_mode = 2
-texture = ExtResource("1_e7yua")
-expand_mode = 1
 
-[node name="EMQuantity" type="Label" parent="MarginContainer3/EvocationMagicians"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="MageEvocation" parent="MarginContainer3/HBoxContainer" instance=ExtResource("4_84q2j")]
+position = Vector2(10, 5)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="MarginContainer3/HBoxContainer/MageEvocation" index="0"]
+autoplay = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="EMQuantity" type="Label" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
 text = "x2"
 horizontal_alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Potions" type="TextureRect" parent="MarginContainer4"]
-custom_minimum_size = Vector2(65, 75)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer4"]
 layout_mode = 2
-texture = ExtResource("1_e7yua")
-expand_mode = 1
 
-[node name="PQuantity" type="Label" parent="MarginContainer4/Potions"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer4/HBoxContainer"]
+position = Vector2(10, 5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aruxk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="PQuantity" type="Label" parent="MarginContainer4/HBoxContainer"]
+layout_mode = 2
 text = "x2"
 horizontal_alignment = 1
 
@@ -127,13 +139,11 @@ layout_mode = 2
 
 [node name="Turn" type="Label" parent="MarginContainer5/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Turn"
 horizontal_alignment = 1
 
 [node name="CurrentTurn" type="Label" parent="MarginContainer5/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1 / 15
 "
 horizontal_alignment = 1
@@ -190,3 +200,7 @@ size_flags_vertical = 8
 text = "Map"
 
 [connection signal="pressed" from="MarginContainer6/PassTurn" to="." method="_on_pass_turn_pressed"]
+
+[editable path="MarginContainer/HBoxContainer/MageAdivination"]
+[editable path="MarginContainer2/HBoxContainer/MageThaumaturgy"]
+[editable path="MarginContainer3/HBoxContainer/MageEvocation"]

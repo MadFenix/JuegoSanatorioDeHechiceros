@@ -50,6 +50,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MapContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
 [node name="Summary" parent="VBoxContainer/MapContainer" instance=ExtResource("2_3weym")]
 layout_mode = 2
 
@@ -195,6 +199,9 @@ unique_name_in_owner = true
 [connection signal="mouse_exited" from="VBoxContainer/MapContainer/MarginContainer3/Mapa/Area2D" to="VBoxContainer/MapContainer/MarginContainer3/Mapa" method="_on_area_2d_mouse_exited"]
 
 [editable path="VBoxContainer/MapContainer/Summary"]
+[editable path="VBoxContainer/MapContainer/Summary/MarginContainer/HBoxContainer/MageAdivination"]
+[editable path="VBoxContainer/MapContainer/Summary/MarginContainer2/HBoxContainer/MageThaumaturgy"]
+[editable path="VBoxContainer/MapContainer/Summary/MarginContainer3/HBoxContainer/MageEvocation"]
 [editable path="VBoxContainer/MapContainer/MarginContainer3/Mapa/Zone1"]
 [editable path="VBoxContainer/MapContainer/MarginContainer3/Mapa/Zone2"]
 [editable path="VBoxContainer/MapContainer/MarginContainer3/Mapa/Zone3"]

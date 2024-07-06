@@ -180,8 +180,8 @@ exploration_needed_to_levelup = Array[int]([1, 1, 1, 1])
 mysticism_needed_to_levelup = Array[int]([1, 2, 2, 3])
 sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM" index="0"]
-texture_normal = ExtResource("5_5m4v8")
+[node name="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM" index="0"]
+texture = ExtResource("5_5m4v8")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(0, 70)
@@ -213,8 +213,8 @@ exploration_needed_to_levelup = Array[int]([2, 3, 4, 4])
 mysticism_needed_to_levelup = Array[int]([1, 2, 3, 4])
 sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM" index="0"]
-texture_normal = ExtResource("6_dds1a")
+[node name="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM" index="0"]
+texture = ExtResource("6_dds1a")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(0, 70)
@@ -246,8 +246,8 @@ exploration_needed_to_levelup = Array[int]([2, 2, 4, 4])
 mysticism_needed_to_levelup = Array[int]([1, 2, 4, 4])
 sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM" index="0"]
-texture_normal = ExtResource("7_ve25c")
+[node name="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM" index="0"]
+texture = ExtResource("7_ve25c")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(0, 70)
@@ -423,3 +423,6 @@ layout_mode = 2
 [editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageEvocation"]
 [editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageThaumaturgy"]
 [editable path="VBoxContainer/BaseContainer/Summary"]
+[editable path="VBoxContainer/BaseContainer/Summary/MarginContainer/HBoxContainer/MageAdivination"]
+[editable path="VBoxContainer/BaseContainer/Summary/MarginContainer2/HBoxContainer/MageThaumaturgy"]
+[editable path="VBoxContainer/BaseContainer/Summary/MarginContainer3/HBoxContainer/MageEvocation"]

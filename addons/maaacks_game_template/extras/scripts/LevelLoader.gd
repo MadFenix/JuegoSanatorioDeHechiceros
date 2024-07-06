@@ -14,6 +14,10 @@ signal levels_finished
 @export_group("Debugging")
 @export var force_level : int = -1
 
+var backgroundMusicNode : Node
+var backgroundMusicMap = preload("res://assets/sound/map.mp3")
+var backgroundMusicBase = preload("res://assets/sound/base.mp3")
+
 var current_level : Node
 
 func get_current_level_id() -> int:
@@ -67,13 +71,17 @@ func switch_level():
 	if level_id == 0:
 		level_id = 1
 		GameState.currentLevel = 'Map'
+		backgroundMusicNode.stream = backgroundMusicMap
 	else:
 		level_id = 0
 		GameState.currentLevel = 'Base'
+		backgroundMusicNode.stream = backgroundMusicBase
+	backgroundMusicNode.play()
 	GameLevelLog.level_reached(level_id)
 	load_level()
 
 func _ready():
+	backgroundMusicNode = %BackgroundMusicPlayer
 	GameLevelLog.level_reached(0)
 	if Engine.is_editor_hint():
 		# Text files get a `.remap` extension added on export.
