@@ -148,6 +148,17 @@ text = "1 / 15
 "
 horizontal_alignment = 1
 
+[node name="MarginContainer8" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="InfoBtn" type="Button" parent="MarginContainer8"]
+layout_mode = 2
+text = "Info"
+
 [node name="MarginContainer6" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -199,6 +210,7 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Map"
 
+[connection signal="pressed" from="MarginContainer8/InfoBtn" to="." method="_on_info_btn_pressed"]
 [connection signal="pressed" from="MarginContainer6/PassTurn" to="." method="_on_pass_turn_pressed"]
 
 [editable path="MarginContainer/HBoxContainer/MageAdivination"]

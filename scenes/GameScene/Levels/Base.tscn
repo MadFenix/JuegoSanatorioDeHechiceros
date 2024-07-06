@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=21 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b2iou08eijjy2" path="res://assets/images/rooms/room_exploration.png" id="11_fhqsv"]
 [ext_resource type="PackedScene" uid="uid://8vfe82kbx5bi" path="res://scenes/GameScene/Elements/Magicians/MageThaumaturgy.tscn" id="13_1a0f7"]
 [ext_resource type="Script" path="res://scenes/GameScene/Elements/Knowledge/KnowledgeZones.gd" id="14_75jpu"]
+[ext_resource type="PackedScene" uid="uid://c7cujqetvswfv" path="res://scenes/GameScene/Elements/Information.tscn" id="20_x2hlc"]
 
 [node name="Base" type="Control"]
 layout_mode = 3
@@ -403,6 +404,10 @@ layout_mode = 2
 
 [node name="Summary" parent="VBoxContainer/BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
+
+[node name="Information" parent="." instance=ExtResource("20_x2hlc")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningTB" to="VBoxContainer/BaseContainer/KnowledgeZones" method="_on_minning_tb_pressed"]
 [connection signal="pressed" from="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticimTB" to="VBoxContainer/BaseContainer/KnowledgeZones" method="_on_mysticim_tb_pressed"]

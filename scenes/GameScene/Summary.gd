@@ -37,3 +37,7 @@ func setTurnLabel(turn):
 
 func _on_pass_turn_pressed():
 	GameState.passToNextTurn()
+
+
+func _on_info_btn_pressed():
+	GameState.openInfo.emit()

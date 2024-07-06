@@ -3,6 +3,16 @@ extends Node
 signal level_won
 signal level_lost
 
+func _ready():
+	GameState.openInfo.connect(openInfoFunctionality)
+	GameState.closeInfo.connect(closeInfoFunctionality)
+
+func openInfoFunctionality():
+	$Information.visible = true
+
+func closeInfoFunctionality():
+	$Information.visible = false
+
 func _on_lose_button_pressed():
 	emit_signal("level_lost")
 

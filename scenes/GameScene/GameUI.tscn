@@ -20,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_ou4xd")
 script = ExtResource("1_xquw8")
 win_scene = ExtResource("2_gkmdf")
@@ -42,7 +43,22 @@ stream = ExtResource("9_mpq0b")
 [node name="LoadingScreen" parent="." instance=ExtResource("8_elxsf")]
 visible = false
 
-[node name="ViewportContainer" type="SubViewportContainer" parent="."]
+[node name="ViewportContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="ConfigurableSubViewport" type="Control" parent="ViewportContainer"]
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="ViewportContainer2" type="SubViewportContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="ConfigurableSubViewport" type="SubViewport" parent="ViewportContainer"]
+[node name="ConfigurableSubViewport2" type="SubViewport" parent="ViewportContainer2"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
@@ -59,7 +75,7 @@ audio_listener_enable_3d = true
 physics_object_picking = true
 gui_embed_subwindows = true
 size = Vector2i(1280, 720)
-render_target_update_mode = 4
+render_target_update_mode = 0
 script = ExtResource("9_ba104")
 
 [node name="InputDisplayLabel" type="Label" parent="."]
