@@ -38,6 +38,8 @@ var currentAdivinationMages = 2
 var currentEvocationMages = 2
 var currentThaumaturgyMages = 2
 
+var firstViewToBase = true
+
 func incrementTurn():
 	currentTurn += 1
 	currentAdivinationMages = adivinationMages

@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready():
 	GameState.nextTurn.connect(nextTurn)
 	setTurnLabel(str(GameState.currentTurn))

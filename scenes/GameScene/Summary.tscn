@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ysf7eug82liq"]
+[gd_scene load_steps=10 format=3 uid="uid://ysf7eug82liq"]
 
 [ext_resource type="Script" path="res://scenes/GameScene/Summary.gd" id="1_qw761"]
 [ext_resource type="PackedScene" uid="uid://c24ctqhn3rmld" path="res://scenes/GameScene/Elements/Magicians/MageAdivination.tscn" id="2_poo02"]
 [ext_resource type="PackedScene" uid="uid://8vfe82kbx5bi" path="res://scenes/GameScene/Elements/Magicians/MageThaumaturgy.tscn" id="3_68o4f"]
 [ext_resource type="PackedScene" uid="uid://c4lxgse0mjau" path="res://scenes/GameScene/Elements/Magicians/MageEvocation.tscn" id="4_84q2j"]
 [ext_resource type="Texture2D" uid="uid://cw5qny57ljtp3" path="res://assets/images/potion.png" id="5_8p2a3"]
+[ext_resource type="Texture2D" uid="uid://ckpgc0piolmvg" path="res://assets/images/summary/end_turn.png" id="6_bxndw"]
+[ext_resource type="Texture2D" uid="uid://cparpqro1ecnw" path="res://assets/images/summary/go_map.png" id="6_xsrcs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bx2af"]
 atlas = ExtResource("5_8p2a3")
@@ -127,6 +129,17 @@ layout_mode = 2
 text = "x2"
 horizontal_alignment = 1
 
+[node name="MarginContainer8" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="InfoBtn" type="Button" parent="MarginContainer8"]
+layout_mode = 2
+text = "Info"
+
 [node name="MarginContainer5" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -148,17 +161,6 @@ text = "1 / 15
 "
 horizontal_alignment = 1
 
-[node name="MarginContainer8" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="InfoBtn" type="Button" parent="MarginContainer8"]
-layout_mode = 2
-text = "Info"
-
 [node name="MarginContainer6" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -168,32 +170,13 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="PassTurn" type="Button" parent="MarginContainer6"]
+[node name="PassTurn" type="TextureButton" parent="MarginContainer6"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer6/PassTurn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="MarginContainer6/PassTurn/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-size_flags_vertical = 6
-text = "Next"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MarginContainer6/PassTurn/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Turn"
-horizontal_alignment = 1
+texture_normal = ExtResource("6_bxndw")
+stretch_mode = 5
 
 [node name="MarginContainer7" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -204,10 +187,21 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="GoToMapBtn" type="Button" parent="MarginContainer7"]
+[node name="GoToMapBtn" type="TextureButton" parent="MarginContainer7"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 8
+texture_normal = ExtResource("6_xsrcs")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer7/GoToMapBtn"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 49.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 text = "Map"
 
 [connection signal="pressed" from="MarginContainer8/InfoBtn" to="." method="_on_info_btn_pressed"]

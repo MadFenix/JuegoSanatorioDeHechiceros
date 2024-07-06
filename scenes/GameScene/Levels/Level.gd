@@ -6,6 +6,9 @@ signal level_lost
 func _ready():
 	GameState.openInfo.connect(openInfoFunctionality)
 	GameState.closeInfo.connect(closeInfoFunctionality)
+	if GameState.firstViewToBase:
+		GameState.firstViewToBase = false
+		GameState.openInfo.emit()
 
 func openInfoFunctionality():
 	$Information.visible = true

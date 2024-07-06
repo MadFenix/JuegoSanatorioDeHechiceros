@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=22 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://lam3gqva5247" path="res://scenes/GameScene/Elements/Magicians/MageReceptionist.tscn" id="6_fv8ga"]
 [ext_resource type="PackedScene" uid="uid://djp4ekt2x56fo" path="res://scenes/GameScene/Elements/TypeMagic/TypeMagic.tscn" id="7_bh57e"]
 [ext_resource type="Texture2D" uid="uid://q1b3o3j2mp4b" path="res://assets/images/rooms/room_thaumaturgy.png" id="7_ve25c"]
+[ext_resource type="Texture2D" uid="uid://101vnisj5wlk" path="res://assets/images/mages/concierge.png" id="7_xp76y"]
 [ext_resource type="Texture2D" uid="uid://bfctp5yignkga" path="res://assets/images/rooms/room_minning.png" id="9_nxa8a"]
 [ext_resource type="PackedScene" uid="uid://c24ctqhn3rmld" path="res://scenes/GameScene/Elements/Magicians/MageAdivination.tscn" id="9_osdwa"]
 [ext_resource type="Texture2D" uid="uid://bvfugc7pi471r" path="res://assets/images/rooms/room_mysticism.png" id="10_7lopr"]
@@ -162,6 +163,11 @@ layout_mode = 2
 [node name="MageReceptionist" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
 position = Vector2(250, 0)
 scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer"]
+position = Vector2(80, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("7_xp76y")
 
 [node name="TypesOfMagicZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
@@ -404,6 +410,9 @@ layout_mode = 2
 
 [node name="Summary" parent="VBoxContainer/BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
+
+[node name="Label" parent="VBoxContainer/BaseContainer/Summary/MarginContainer7/GoToMapBtn" index="0"]
+theme_override_font_sizes/font_size = 26
 
 [node name="Information" parent="." instance=ExtResource("20_x2hlc")]
 visible = false
