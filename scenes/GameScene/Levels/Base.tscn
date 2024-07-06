@@ -1,17 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=20 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
 [ext_resource type="Texture2D" uid="uid://ce28lke1ifgrc" path="res://assets/images/rooms/room_school.png" id="3_k4v3v"]
 [ext_resource type="PackedScene" uid="uid://ysf7eug82liq" path="res://scenes/GameScene/Summary.tscn" id="3_yfgrd"]
+[ext_resource type="PackedScene" uid="uid://ba2in3823ab1d" path="res://scenes/GameScene/Elements/Magicians/MageStudent.tscn" id="4_0kt1h"]
 [ext_resource type="PackedScene" uid="uid://dlrtl565cb3a8" path="res://scenes/GameScene/Elements/Knowledge/Knowledge.tscn" id="4_fvy84"]
 [ext_resource type="Texture2D" uid="uid://b0fes2m32023q" path="res://assets/images/rooms/room_reception.png" id="4_pqfio"]
 [ext_resource type="Texture2D" uid="uid://dvl3o1nvrrgkp" path="res://assets/images/rooms/room_adivination.png" id="5_5m4v8"]
 [ext_resource type="Texture2D" uid="uid://cam3umybj0mpo" path="res://assets/images/rooms/room_evocation.png" id="6_dds1a"]
+[ext_resource type="PackedScene" uid="uid://lam3gqva5247" path="res://scenes/GameScene/Elements/Magicians/MageReceptionist.tscn" id="6_fv8ga"]
+[ext_resource type="PackedScene" uid="uid://djp4ekt2x56fo" path="res://scenes/GameScene/Elements/TypeMagic/TypeMagic.tscn" id="7_bh57e"]
 [ext_resource type="Texture2D" uid="uid://q1b3o3j2mp4b" path="res://assets/images/rooms/room_thaumaturgy.png" id="7_ve25c"]
 [ext_resource type="Texture2D" uid="uid://bfctp5yignkga" path="res://assets/images/rooms/room_minning.png" id="9_nxa8a"]
+[ext_resource type="PackedScene" uid="uid://c24ctqhn3rmld" path="res://scenes/GameScene/Elements/Magicians/MageAdivination.tscn" id="9_osdwa"]
 [ext_resource type="Texture2D" uid="uid://bvfugc7pi471r" path="res://assets/images/rooms/room_mysticism.png" id="10_7lopr"]
+[ext_resource type="PackedScene" uid="uid://c4lxgse0mjau" path="res://scenes/GameScene/Elements/Magicians/MageEvocation.tscn" id="11_6h4vi"]
 [ext_resource type="Texture2D" uid="uid://b2iou08eijjy2" path="res://assets/images/rooms/room_exploration.png" id="11_fhqsv"]
+[ext_resource type="PackedScene" uid="uid://8vfe82kbx5bi" path="res://scenes/GameScene/Elements/Magicians/MageThaumaturgy.tscn" id="13_1a0f7"]
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/Knowledge/KnowledgeZones.gd" id="14_75jpu"]
 
 [node name="Base" type="Control"]
 layout_mode = 3
@@ -86,6 +93,36 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "School"
 horizontal_alignment = 1
 
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer"]
+layout_mode = 2
+
+[node name="MageStudent" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer/HBoxContainer" instance=ExtResource("4_0kt1h")]
+position = Vector2(100, 10)
+scale = Vector2(2, 2)
+
+[node name="MageStudent2" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer/HBoxContainer" instance=ExtResource("4_0kt1h")]
+position = Vector2(250, 0)
+scale = Vector2(2, 2)
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer"]
+layout_mode = 2
+
+[node name="MageStudent" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer/HBoxContainer2" instance=ExtResource("4_0kt1h")]
+position = Vector2(120, 0)
+scale = Vector2(2, 2)
+
+[node name="MageStudent2" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer/SchoolTexture/VBoxContainer/HBoxContainer2" instance=ExtResource("4_0kt1h")]
+position = Vector2(230, 20)
+scale = Vector2(-2, 2)
+
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
@@ -114,6 +151,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reception"
 horizontal_alignment = 1
 
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
+layout_mode = 2
+
+[node name="MageReceptionist" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
+position = Vector2(250, 0)
+scale = Vector2(2, 2)
+
 [node name="TypesOfMagicZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
 
@@ -124,10 +172,31 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="AdivinationMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer"]
-custom_minimum_size = Vector2(380, 212)
+[node name="AdivinationTM" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer" instance=ExtResource("7_bh57e")]
 layout_mode = 2
-texture = ExtResource("5_5m4v8")
+magic_type = 0
+mining_needed_to_levelup = Array[int]([1, 2, 4, 4])
+exploration_needed_to_levelup = Array[int]([1, 1, 1, 1])
+mysticism_needed_to_levelup = Array[int]([1, 2, 2, 3])
+sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
+
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM" index="0"]
+texture_normal = ExtResource("5_5m4v8")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="MageAdivination" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("9_osdwa")]
+position = Vector2(0, 25)
+scale = Vector2(2, 2)
+
+[node name="MageAdivination2" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("9_osdwa")]
+position = Vector2(170, 30)
+scale = Vector2(2, 2)
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones"]
 layout_mode = 2
@@ -136,10 +205,31 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="EvocationMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2"]
-custom_minimum_size = Vector2(380, 212)
+[node name="EvocationTM" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2" instance=ExtResource("7_bh57e")]
 layout_mode = 2
-texture = ExtResource("6_dds1a")
+magic_type = 2
+mining_needed_to_levelup = Array[int]([1, 1, 1, 1])
+exploration_needed_to_levelup = Array[int]([2, 3, 4, 4])
+mysticism_needed_to_levelup = Array[int]([1, 2, 3, 4])
+sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
+
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM" index="0"]
+texture_normal = ExtResource("6_dds1a")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="MageEvocation" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
+position = Vector2(0, 35)
+scale = Vector2(2, 2)
+
+[node name="MageEvocation2" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
+position = Vector2(120, 0)
+scale = Vector2(-2, 2)
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones"]
 layout_mode = 2
@@ -148,13 +238,34 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ThaumaturgyMagic" type="TextureRect" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3"]
-custom_minimum_size = Vector2(380, 212)
+[node name="ThaumatugicTM" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3" instance=ExtResource("7_bh57e")]
 layout_mode = 2
-texture = ExtResource("7_ve25c")
+magic_type = 1
+mining_needed_to_levelup = Array[int]([2, 2, 4, 4])
+exploration_needed_to_levelup = Array[int]([2, 2, 4, 4])
+mysticism_needed_to_levelup = Array[int]([1, 2, 4, 4])
+sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
+
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM" index="0"]
+texture_normal = ExtResource("7_ve25c")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="MageThaumaturgy" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+scale = Vector2(2, 2)
+
+[node name="MageThaumaturgy2" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+position = Vector2(150, 25)
+scale = Vector2(2, 2)
 
 [node name="KnowledgeZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
+script = ExtResource("14_75jpu")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
 layout_mode = 2
@@ -163,13 +274,40 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Knowledge" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer" instance=ExtResource("4_fvy84")]
+[node name="MinningK" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer" instance=ExtResource("4_fvy84")]
+unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 0
 turns_needed_to_levelup = Array[int]([1, 2, 2, 2])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/Knowledge" index="0"]
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK" index="0"]
 texture_normal = ExtResource("9_nxa8a")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="MinMageAdivination" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2" instance=ExtResource("9_osdwa")]
+unique_name_in_owner = true
+position = Vector2(120, 10)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageAdivination" index="0"]
+autoplay = ""
+
+[node name="MinMageThaumaturgy" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+unique_name_in_owner = true
+position = Vector2(0, 20)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageThaumaturgy" index="0"]
+autoplay = ""
+
+[node name="MinningTB" type="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer"]
+layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
 layout_mode = 2
@@ -178,13 +316,48 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Knowledge" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3" instance=ExtResource("4_fvy84")]
+[node name="MysticismK" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3" instance=ExtResource("4_fvy84")]
+unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 2
 turns_needed_to_levelup = Array[int]([2, 2, 2, 2])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/Knowledge" index="0"]
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK" index="0"]
 texture_normal = ExtResource("10_7lopr")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="MysMageThaumaturgy" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageThaumaturgy" index="0"]
+autoplay = ""
+
+[node name="MysMageEvocation" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
+unique_name_in_owner = true
+position = Vector2(98, 45)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageEvocation" index="0"]
+autoplay = ""
+
+[node name="MysMageAdivination" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2" instance=ExtResource("9_osdwa")]
+unique_name_in_owner = true
+position = Vector2(35, 20)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageAdivination" index="0"]
+autoplay = ""
+
+[node name="MysticimTB" type="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3"]
+layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones"]
 layout_mode = 2
@@ -193,20 +366,60 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Knowledge2" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2" instance=ExtResource("4_fvy84")]
+[node name="ExplorationK" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2" instance=ExtResource("4_fvy84")]
+unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 1
 turns_needed_to_levelup = Array[int]([1, 1, 1, 1])
 
-[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/Knowledge2" index="0"]
+[node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK" index="0"]
 texture_normal = ExtResource("11_fhqsv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="ExpMageEvocation" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
+unique_name_in_owner = true
+position = Vector2(0, 20)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageEvocation" index="0"]
+autoplay = ""
+
+[node name="ExpMageThaumaturgy" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+unique_name_in_owner = true
+position = Vector2(95, 0)
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageThaumaturgy" index="0"]
+autoplay = ""
+
+[node name="ExplorationTB" type="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2"]
+layout_mode = 2
 
 [node name="Summary" parent="VBoxContainer/BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
 
+[connection signal="pressed" from="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningTB" to="VBoxContainer/BaseContainer/KnowledgeZones" method="_on_minning_tb_pressed"]
+[connection signal="pressed" from="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticimTB" to="VBoxContainer/BaseContainer/KnowledgeZones" method="_on_mysticim_tb_pressed"]
+[connection signal="pressed" from="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationTB" to="VBoxContainer/BaseContainer/KnowledgeZones" method="_on_exploration_tb_pressed"]
 [connection signal="pressed" from="VBoxContainer/BaseContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
 
-[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/Knowledge"]
-[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/Knowledge"]
-[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/Knowledge2"]
+[editable path="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer/AdivinationTM"]
+[editable path="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM"]
+[editable path="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageAdivination"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageThaumaturgy"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageThaumaturgy"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageEvocation"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageAdivination"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageEvocation"]
+[editable path="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageThaumaturgy"]
 [editable path="VBoxContainer/BaseContainer/Summary"]

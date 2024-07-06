@@ -106,7 +106,6 @@ func showDialog():
 	popup_open = %ZoneDialog
 
 func _on_area_2d_mouse_entered():
-	print(zoneNumber)
 	GameState.currentZone = zoneNumber
 
 # Método para guardar el estado de la zona
@@ -131,4 +130,3 @@ func restore_state(state_data: Dictionary):
 	current_potions = state_data["current_potions"]
 	dialogue = state_data["dialogue"]
 	last_state = state_data["last_state"]
-	load_state()

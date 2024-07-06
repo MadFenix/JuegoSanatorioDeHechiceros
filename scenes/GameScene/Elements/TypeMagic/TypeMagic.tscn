@@ -1,48 +1,80 @@
-[gd_scene load_steps=3 format=3 uid="uid://co45kbd87ngt0"]
+[gd_scene load_steps=4 format=3 uid="uid://djp4ekt2x56fo"]
 
-[ext_resource type="Script" path="res://scenes/GameScene/Elements/Knowledge/Knowledge.gd" id="1_i234e"]
-[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_q0ak0"]
+[ext_resource type="Script" path="res://scenes/GameScene/Elements/TypeMagic/TypeMagic.gd" id="1_sk0ax"]
+[ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_gl8nt"]
+[ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="3_6d1nh"]
 
-[node name="Knowledge" type="Node2D"]
-script = ExtResource("1_i234e")
+[node name="TypeMagic" type="Control"]
+custom_minimum_size = Vector2(380, 212)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sk0ax")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(215, 80)
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("2_q0ak0")
+layout_mode = 1
+offset_right = 380.0
+offset_bottom = 212.0
+texture_normal = ExtResource("2_gl8nt")
 stretch_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 215.0
-offset_bottom = 86.0
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Type of magic"
-horizontal_alignment = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 17.0
+offset_right = 100.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme = ExtResource("3_6d1nh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Knowledge"
+horizontal_alignment = 1
+
+[node name="CurrentLevel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Level: "
 
 [node name="Label_Nivel" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
 text = "1"
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "...."
 horizontal_alignment = 1
 
-[node name="Label_Proximo_Nivel" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="NextLevel" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Next level: "
+horizontal_alignment = 2
+
+[node name="Label_Proximo_Nivel" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "2"
 horizontal_alignment = 2

@@ -1,5 +1,5 @@
 class_name TypeMagicClass
-extends Node2D
+extends Control
 
 signal levelup()
 
@@ -39,8 +39,7 @@ func getType() -> String:
 	return dic_magic[magic_type]
 
 func label_refresh():
-	$VBoxContainer/Label.text = getType()
+	$VBoxContainer/HBoxContainer/Label.text = getType()
 
 func level_change():
 	$VBoxContainer/HBoxContainer/Label_Nivel.text = str(level_magic)
-	$VBoxContainer/HBoxContainer/Label_Proximo_Nivel.text = str(level_magic + 1)
