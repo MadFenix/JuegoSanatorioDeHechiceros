@@ -31,8 +31,15 @@ var adivinationMages = 2
 var evocationMages = 2
 var thaumaturgyMages = 2
 
+var currentAdivinationMages = 2
+var currentEvocationMages = 2
+var currentThaumaturgyMages = 2
+
 func incrementTurn():
 	currentTurn += 1
+	currentAdivinationMages = adivinationMages
+	currentEvocationMages = evocationMages
+	currentThaumaturgyMages = thaumaturgyMages
 
 func passToNextTurn():
 	incrementTurn()

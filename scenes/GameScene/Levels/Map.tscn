@@ -192,9 +192,6 @@ zoneNumber = 10
 [node name="CollisionPolygon2D" parent="VBoxContainer/MapContainer/MarginContainer3/Mapa/Zone10/Area2D" index="0"]
 polygon = PackedVector2Array(441, 255, 435, 298, 473, 376, 582, 376, 623, 296, 540, 211, 536, 211, 530, 204, 507, 203)
 
-[node name="ZoneDialog" type="ConfirmationDialog" parent="."]
-unique_name_in_owner = true
-
 [connection signal="pressed" from="VBoxContainer/MapContainer/Summary/MarginContainer7/GoToMapBtn" to="." method="_on_win_button_pressed"]
 [connection signal="mouse_exited" from="VBoxContainer/MapContainer/MarginContainer3/Mapa/Area2D" to="VBoxContainer/MapContainer/MarginContainer3/Mapa" method="_on_area_2d_mouse_exited"]
 

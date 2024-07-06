@@ -31,7 +31,6 @@ signal levelup()
 			GameState.evocationMages = sourcerers_by_levelup[level_magic - 1]
 		level_change()
 		save_state()
-		GameState.typeMagicChanged.emit(dic_magic[magic_type])
 	get:
 		return level_magic
 
@@ -93,6 +92,13 @@ func _on_confirmation_dialog_confirmed():
 	var isMysticismAccepted = GameState.mysticismLevel >= mysticism_needed_to_levelup[level_magic - 1]
 	if isMiningAccepted && isExplorationAccepted && isMysticismAccepted:
 		level_magic += 1
+		if dic_magic[magic_type] == 'Adivination':
+			GameState.currentAdivinationMages += sourcerers_by_levelup[level_magic - 1] - sourcerers_by_levelup[level_magic - 2]
+		if dic_magic[magic_type] == 'Thaumaturgy':
+			GameState.currentThaumaturgyMages += sourcerers_by_levelup[level_magic - 1] - sourcerers_by_levelup[level_magic - 2]
+		if dic_magic[magic_type] == 'Evocation':
+			GameState.currentEvocationMages += sourcerers_by_levelup[level_magic - 1] - sourcerers_by_levelup[level_magic - 2]
+		GameState.typeMagicChanged.emit(dic_magic[magic_type])
 	confirmationDialog.hide()
 
 

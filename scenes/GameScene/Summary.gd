@@ -7,20 +7,22 @@ func _ready():
 	if GameState.currentLevel != "Map":
 		%PassTurn.visible = false
 	GameState.typeMagicChanged.connect(typeMagicChange)
+	GameState.zoneChanged.connect(typeMagicChange)
+	typeMagicChange()
 
 func nextTurn():
 	setTurnLabel(str(GameState.currentTurn))
 
-func typeMagicChange(magicType):
+func typeMagicChange(magicType = ""):
 	if magicType == 'Adivination':
 		$MarginContainer/HBoxContainer/MageAdivination/AnimatedSprite2D.play("default")
 	if magicType == 'Thaumaturgy':
 		$MarginContainer2/HBoxContainer/MageThaumaturgy/AnimatedSprite2D.play("default")
 	if magicType == 'Evocation':
 		$MarginContainer3/HBoxContainer/MageEvocation/AnimatedSprite2D.play("default")
-	$MarginContainer/HBoxContainer/AMQuantity.text = "x" + str(GameState.adivinationMages)
-	$MarginContainer2/HBoxContainer/TMQuantity.text = "x" + str(GameState.thaumaturgyMages)
-	$MarginContainer3/HBoxContainer/EMQuantity.text = "x" + str(GameState.evocationMages)
+	$MarginContainer/HBoxContainer/AMQuantity.text = "x" + str(GameState.currentAdivinationMages)
+	$MarginContainer2/HBoxContainer/TMQuantity.text = "x" + str(GameState.currentThaumaturgyMages)
+	$MarginContainer3/HBoxContainer/EMQuantity.text = "x" + str(GameState.currentEvocationMages)
 	await get_tree().create_timer(5).timeout
 	if magicType == 'Adivination':
 		$MarginContainer/HBoxContainer/MageAdivination/AnimatedSprite2D.stop()
