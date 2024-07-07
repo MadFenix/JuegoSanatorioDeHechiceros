@@ -75,7 +75,8 @@ func set_state(is_turn_change = false) -> void:
 	last_state = state
 	if !is_turn_change && thaumaturgy_assigned >= thaumaturgy_required and adivination_assigned >= adivination_required and evocation_assigned >= evocation_required:
 		state = 2 # curada
-		GameState.emit_signal("zoneChanged")
+		GameState.zoneChanged.emit()
+		GameState.zoneCured.emit()
 		$IllButton.visible = false
 		$CureButton.visible = true
 	elif GameState.currentTurn == turn_to_ill:
@@ -87,7 +88,7 @@ func set_state(is_turn_change = false) -> void:
 		state = 0 # sana
 		$IllButton.visible = false
 		$CureButton.visible = false
-		GameState.emit_signal("zoneChanged")
+		GameState.zoneChanged.emit()
 	
 	save_state()
 

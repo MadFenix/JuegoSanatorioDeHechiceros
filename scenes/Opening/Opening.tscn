@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5t8hcepjerb1"]
+[gd_scene load_steps=4 format=3 uid="uid://b5t8hcepjerb1"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/extras/scenes/Opening/Opening.tscn" id="1_pc6jn"]
+[ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_game_template/extras/scenes/Opening/Opening.tscn" id="1_pc6jn"]
 [ext_resource type="Script" path="res://scenes/Opening/Opening.gd" id="2_7ado7"]
+[ext_resource type="Texture2D" uid="uid://bbtv6nxlj2abp" path="res://assets/images/panelMadFenix.jpg" id="3_htm8k"]
 
 [node name="Opening" instance=ExtResource("1_pc6jn")]
 script = ExtResource("2_7ado7")
 next_scene = "res://scenes/Menus/MainMenu/MainMenuWithAnimations.tscn"
+images = Array[Texture2D]([ExtResource("3_htm8k")])

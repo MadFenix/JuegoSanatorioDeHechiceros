@@ -8,6 +8,7 @@
 script = ExtResource("2_bqvef")
 
 [node name="ResetGameControl" parent="." index="3" instance=ExtResource("3_165fe")]
+visible = false
 layout_mode = 2
 
 [connection signal="reset_confirmed" from="ResetGameControl" to="." method="_on_reset_game_control_reset_confirmed"]

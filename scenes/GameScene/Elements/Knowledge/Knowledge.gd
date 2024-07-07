@@ -83,6 +83,8 @@ func progress_refresh():
 
 func progress_knowledge():
 	if !pause:
+		if knowledge_type == 0:
+			print('test')
 		progress += 1 * multi
 
 func multiplicador():

@@ -8,6 +8,7 @@ signal closeInfo()
 # Señales para las zonas
 ## Señal para cambiar el estado de la zona
 signal zoneChanged()
+signal zoneCured()
 
 ## Señales para añadir magos y pociones
 signal addWizard()

@@ -19,6 +19,7 @@ polygon = PackedVector2Array(0, 0, 0, 100, 100, 100, 100, 0)
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 
 [node name="IllButton" type="TextureButton" parent="."]
+visible = false
 offset_right = 75.0
 offset_bottom = 40.0
 theme = ExtResource("2_kjxhi")

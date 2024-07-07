@@ -2,6 +2,7 @@ extends Node
 
 signal level_won
 signal level_lost
+signal level_won_finally
 
 func _ready():
 	GameState.openInfo.connect(openInfoFunctionality)
@@ -27,3 +28,9 @@ func _input(event):
 		var zoneName = get_node("%Zone" + str(GameState.currentZone))
 		if zoneName && (zoneName.state == 1 || zoneName.state == 2) && event.is_action_pressed('click'):
 			zoneName.showDialog()
+
+func _on_summary_run_credits():
+	level_lost.emit()
+
+func _on_summary_win_run_credits():
+	level_won_finally.emit()

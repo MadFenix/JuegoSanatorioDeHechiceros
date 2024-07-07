@@ -1,7 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqsd4y02iipnw"]
+[gd_scene load_steps=34 format=3 uid="uid://cqsd4y02iipnw"]
 
-[ext_resource type="PackedScene" path="res://scenes/Menus/MainMenu/MainMenu.tscn" id="1_uemi4"]
+[ext_resource type="PackedScene" uid="uid://uacjonr6fobv" path="res://scenes/Menus/MainMenu/MainMenu.tscn" id="1_uemi4"]
 [ext_resource type="Script" path="res://scenes/Menus/MainMenu/MainMenuWithAnimations.gd" id="2_t5wef"]
+[ext_resource type="Texture2D" uid="uid://cqfh42atiig2s" path="res://assets/images/front_page.png" id="3_060iy"]
+[ext_resource type="Texture2D" uid="uid://8qpw78usosbu" path="res://assets/images/btn_triangle.png" id="4_lbik2"]
+[ext_resource type="Texture2D" uid="uid://cx6yykx2ts28k" path="res://assets/images/btn_rect.png" id="4_t6c3n"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -347,6 +350,60 @@ states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
 graph_offset = Vector2(-180.277, 49)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5kb0"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33mtm"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0aniu"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hyaa"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="Theme" id="Theme_3kofq"]
+Button/styles/focus = SubResource("StyleBoxTexture_e5kb0")
+Button/styles/hover = SubResource("StyleBoxTexture_33mtm")
+Button/styles/normal = SubResource("StyleBoxTexture_0aniu")
+Button/styles/pressed = SubResource("StyleBoxTexture_1hyaa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxhgy"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73rn6"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2oree"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5mkuj"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="Theme" id="Theme_nwivb"]
+Button/styles/focus = SubResource("StyleBoxTexture_gxhgy")
+Button/styles/hover = SubResource("StyleBoxTexture_73rn6")
+Button/styles/normal = SubResource("StyleBoxTexture_2oree")
+Button/styles/pressed = SubResource("StyleBoxTexture_5mkuj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0luox"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vxxbj"]
+texture = ExtResource("4_lbik2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67lg8"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odwcg"]
+texture = ExtResource("4_t6c3n")
+
+[sub_resource type="Theme" id="Theme_u5tkr"]
+Button/styles/focus = SubResource("StyleBoxTexture_0luox")
+Button/styles/hover = SubResource("StyleBoxTexture_vxxbj")
+Button/styles/normal = SubResource("StyleBoxTexture_67lg8")
+Button/styles/pressed = SubResource("StyleBoxTexture_odwcg")
+
 [node name="MainMenu" instance=ExtResource("1_uemi4")]
 script = ExtResource("2_t5wef")
 
@@ -360,6 +417,9 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="BackgroundTextureRect" parent="." index="4"]
+texture = ExtResource("3_060iy")
+
 [node name="VersionNameLabel" parent="." index="5"]
 modulate = Color(1, 1, 1, 0)
 
@@ -368,7 +428,24 @@ modulate = Color(1, 1, 1, 0)
 
 [node name="SubTitle" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="1"]
 modulate = Color(1, 1, 1, 0)
+text = "Subtitle"
+
+[node name="MenuMargin" parent="MenuContainer/VBoxContainer" index="1"]
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 30
 
 [node name="MenuButtons" parent="MenuContainer/VBoxContainer/MenuMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
+size_flags_horizontal = 8
+size_flags_vertical = 0
 lock = true
+
+[node name="EnglishButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" index="0"]
+theme = SubResource("Theme_3kofq")
+
+[node name="SpanishButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" index="1"]
+theme = SubResource("Theme_nwivb")
+
+[node name="CatalanButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" index="2"]
+theme = SubResource("Theme_u5tkr")

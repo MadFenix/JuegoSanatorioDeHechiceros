@@ -49,7 +49,9 @@ overrides = {}
 script = ExtResource("9_28jku")
 name = "portrait"
 base_overrides = {
-"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
+"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)",
+"global_font": "\"res://assets/font/MikeruFullComicRm-Regular.ttf\"",
+"global_font_size": "22.0"
 }
 layers = Array[ExtResource("2_aleej")]([SubResource("Resource_xgyr4"), SubResource("Resource_ehw5p"), SubResource("Resource_yvc88"), SubResource("Resource_715mv"), SubResource("Resource_nfped"), SubResource("Resource_bket8"), SubResource("Resource_1jkvh")])
 metadata/_latest_layer = -1

@@ -24,6 +24,13 @@ func load_zone_state(zone_name: String):
 func has_zone_state(zone_name: String) -> bool:
 	return zone_name in zones_state
 
+func allZonesAreCured():
+	var zonesCured = true
+	for zone_name in zones_state:
+		if zones_state[zone_name].state == 1:
+			zonesCured = false
+	return zonesCured
+
 # Método para guardar el estado de una zona
 func save_knowledge_state(knowledge_name: String, state_data: Dictionary) -> void:
 	knowledges_state[knowledge_name] = state_data

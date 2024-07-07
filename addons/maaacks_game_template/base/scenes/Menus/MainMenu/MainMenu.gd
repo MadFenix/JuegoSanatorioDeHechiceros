@@ -17,6 +17,8 @@ var options_scene
 var credits_scene
 var sub_menu
 
+var button_sound : Node
+
 func load_scene(scene_path : String):
 	SceneLoader.load_scene(scene_path)
 
@@ -85,11 +87,21 @@ func _setup_credits():
 		%CreditsContainer.call_deferred("add_child", credits_scene)
 
 func _ready():
+	button_sound = %ButtonSound
 	_setup_for_web()
 	_setup_version_name()
 	_setup_options()
 	_setup_credits()
 	_setup_play()
+	instanceButtonsSoundSignals()
+
+func instanceButtonsSoundSignals():
+	var buttons: Array = get_tree().get_nodes_in_group("Button")
+	for inst in buttons:
+		inst.pressed.connect(on_button_pressed)
+
+func on_button_pressed():
+	button_sound.play()
 
 func _on_play_button_pressed():
 	play_game()

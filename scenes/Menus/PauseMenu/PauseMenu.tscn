@@ -13,6 +13,9 @@ main_menu_scene = "res://scenes/Menus/MainMenu/MainMenuWithAnimations.tscn"
 [node name="MenuContainer" parent="." index="3"]
 theme = ExtResource("4_18xdw")
 
+[node name="RestartButton" parent="MenuContainer/VBoxContainer/MenuButtons" index="1"]
+visible = false
+
 [node name="SubMenuContainer" parent="." index="4"]
 theme = ExtResource("4_18xdw")
 

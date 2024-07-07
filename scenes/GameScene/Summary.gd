@@ -1,5 +1,8 @@
 extends Control
 
+signal runCredits
+signal winRunCredits
+
 func _ready():
 	GameState.nextTurn.connect(nextTurn)
 	setTurnLabel(str(GameState.currentTurn))
@@ -7,10 +10,18 @@ func _ready():
 		%PassTurn.visible = false
 	GameState.typeMagicChanged.connect(typeMagicChange)
 	GameState.zoneChanged.connect(typeMagicChange)
+	GameState.zoneCured.connect(hideBackToBase)
 	typeMagicChange()
 
 func nextTurn():
 	setTurnLabel(str(GameState.currentTurn))
+	showBackToBase()
+
+func hideBackToBase():
+	$MarginContainer7/GoToMapBtn.visible = false
+
+func showBackToBase():
+	$MarginContainer7/GoToMapBtn.visible = true
 
 func typeMagicChange(magicType = ""):
 	if magicType == 'Adivination':
@@ -37,7 +48,20 @@ func setTurnLabel(turn):
 func _on_pass_turn_pressed():
 	if GameState.currentTurn < GameState.maxTurn:
 		GameState.passToNextTurn()
+	if GameState.currentTurn < GameState.maxTurn && StateManager.allZonesAreCured():
+		Dialogic.timeline_ended.connect(_on_timeline_ended_won)
+		Dialogic.start("won")
+	if GameState.currentTurn == GameState.maxTurn:
+		Dialogic.timeline_ended.connect(_on_timeline_ended)
+		Dialogic.start("zoneIll10")
 
+func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+	runCredits.emit()
+
+func _on_timeline_ended_won():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended_won)
+	winRunCredits.emit()
 
 func _on_info_btn_pressed():
 	GameState.openInfo.emit()

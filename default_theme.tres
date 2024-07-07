@@ -1,6 +1,54 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bv2a6wh6lyl20"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://bv2a6wh6lyl20"]
 
 [ext_resource type="FontFile" uid="uid://mijqax3pl5nw" path="res://assets/font/MikeruFullComicRm-Regular.otf" id="1_pjqht"]
+[ext_resource type="Texture2D" uid="uid://8qpw78usosbu" path="res://assets/images/btn_triangle.png" id="2_alcl0"]
+[ext_resource type="Texture2D" uid="uid://cx6yykx2ts28k" path="res://assets/images/btn_rect.png" id="2_wic11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd20v"]
+texture = ExtResource("2_wic11")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47uox"]
+texture = ExtResource("2_wic11")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csgec"]
+texture = ExtResource("2_alcl0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmav8"]
+texture = ExtResource("2_alcl0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0h8yd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdes8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3s2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le83g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8cmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5y70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yec3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37ghh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmtgu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bngtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5txad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtgdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia27s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfr7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxuju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjaha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmoj1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrunq"]
 
@@ -10,10 +58,36 @@ bg_color = Color(0.393086, 0.393086, 0.393085, 1)
 [resource]
 default_font = ExtResource("1_pjqht")
 default_font_size = 26
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 26
 Button/fonts/font = ExtResource("1_pjqht")
+Button/styles/focus = SubResource("StyleBoxTexture_sd20v")
+Button/styles/hover = SubResource("StyleBoxTexture_47uox")
+Button/styles/normal = SubResource("StyleBoxTexture_csgec")
+Button/styles/pressed = SubResource("StyleBoxTexture_vmav8")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_0h8yd")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_pdes8")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_j3s2v")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_le83g")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_v8cmx")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_h5y70")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_yec3o")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_37ghh")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_dmtgu")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_bngtm")
 Label/font_sizes/font_size = 26
 Label/fonts/font = ExtResource("1_pjqht")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_5txad")
+OptionButton/styles/hover = SubResource("StyleBoxEmpty_gtgdi")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxEmpty_ia27s")
+OptionButton/styles/normal = SubResource("StyleBoxEmpty_lfr7l")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxEmpty_gxuju")
+OptionButton/styles/pressed = SubResource("StyleBoxEmpty_sjaha")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxEmpty_gmoj1")
 ProgressBar/font_sizes/font_size = 8
 ProgressBar/styles/background = SubResource("StyleBoxEmpty_qrunq")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_bfboc")

@@ -20,6 +20,9 @@ var backgroundMusicBase = preload("res://assets/sound/base.mp3")
 
 var current_level : Node
 
+var button_sound : Node
+var button_magic_sound : Node
+
 func get_current_level_id() -> int:
 	return GameLevelLog.get_current_level() if force_level == -1 else force_level
 
@@ -61,10 +64,29 @@ func load_level(level_id : int = get_current_level_id()):
 	await(SceneLoader.scene_loaded)
 	current_level = _attach_level(SceneLoader.get_resource())
 	emit_signal("level_loaded")
+	await get_tree().create_timer(1).timeout
+	instanceButtonsSoundSignals()
+	instanceButtonsMagicSoundSignals()
 
 func advance_and_load_level():
 	if advance_level():
 		load_level()
+
+func instanceButtonsSoundSignals():
+	var buttons: Array = get_tree().get_nodes_in_group("Button")
+	for inst in buttons:
+		inst.pressed.connect(on_button_pressed)
+
+func instanceButtonsMagicSoundSignals():
+	var buttons: Array = get_tree().get_nodes_in_group("ButtonMagic")
+	for inst in buttons:
+		inst.pressed.connect(on_button_magic_pressed)
+
+func on_button_pressed():
+	button_sound.play()
+
+func on_button_magic_pressed():
+	button_magic_sound.play()
 
 func switch_level():
 	var level_id : int = get_current_level_id()
@@ -82,6 +104,8 @@ func switch_level():
 
 func _ready():
 	backgroundMusicNode = %BackgroundMusicPlayer
+	button_sound = %ButtonSound
+	button_magic_sound = %ButtonMagicSound
 	GameLevelLog.level_reached(0)
 	if Engine.is_editor_hint():
 		# Text files get a `.remap` extension added on export.

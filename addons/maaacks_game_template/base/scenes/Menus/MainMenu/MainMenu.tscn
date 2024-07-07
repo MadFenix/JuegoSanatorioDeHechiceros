@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=8 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/Menus/MainMenu/MainMenu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://hmx6o472ropw" path="res://addons/maaacks_game_template/base/scenes/Menus/OptionsMenu/MasterOptionsMenuWithTabs.tscn" id="2_qvrrd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/CaptureFocus.gd" id="4_l1ebe"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="4_w8sbm"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/UISoundController.gd" id="6_bs342"]
+[ext_resource type="AudioStream" uid="uid://bg675o1nl4q50" path="res://assets/sound/sound_button.ogg" id="6_ddr5k"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +23,11 @@ credits_packed_scene = ExtResource("3_5dhvp")
 script = ExtResource("6_bs342")
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("4_w8sbm")]
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_ddr5k")
+bus = &"SFX"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -96,25 +102,25 @@ theme_override_constants/separation = 16
 alignment = 1
 script = ExtResource("4_l1ebe")
 
-[node name="PlayButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+[node name="PlayButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Optionss"
 
-[node name="CreditsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+[node name="CreditsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Credits"
 
-[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
@@ -123,17 +129,17 @@ text = "Exit"
 [node name="LanguageButtons" type="HBoxContainer" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
 layout_mode = 2
 
-[node name="EnglishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+[node name="EnglishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" groups=["Button"]]
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "English"
 
-[node name="SpanishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+[node name="SpanishButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" groups=["Button"]]
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Español"
 
-[node name="CatalanButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons"]
+[node name="CatalanButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/LanguageButtons" groups=["Button"]]
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Català"
@@ -173,7 +179,7 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BackButton" type="Button" parent="FlowControlContainer/FlowControl"]
+[node name="BackButton" type="Button" parent="FlowControlContainer/FlowControl" groups=["Button"]]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(62, 40)
