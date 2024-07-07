@@ -303,6 +303,8 @@ unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 0
 turns_needed_to_levelup = Array[int]([2, 2, 2, 20])
+texture_pause_true = ExtResource("9_nxa8a")
+texture_pause_false = ExtResource("9_nxa8a")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("9_nxa8a")
@@ -345,6 +347,8 @@ unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 2
 turns_needed_to_levelup = Array[int]([2, 2, 2, 20])
+texture_pause_true = ExtResource("10_7lopr")
+texture_pause_false = ExtResource("10_7lopr")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("10_7lopr")
@@ -395,6 +399,8 @@ unique_name_in_owner = true
 layout_mode = 2
 knowledge_type = 1
 turns_needed_to_levelup = Array[int]([1, 1, 1, 20])
+texture_pause_true = ExtResource("11_fhqsv")
+texture_pause_false = ExtResource("11_fhqsv")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("11_fhqsv")

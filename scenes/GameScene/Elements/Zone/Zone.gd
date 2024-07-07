@@ -22,6 +22,11 @@ var statesColors = [
 	Color(0.4, 0.2, 0.6, 0.5),
 	Color(0, 0.5, 0, 0.5)
 ]
+var statesColorsHover = [
+	Color(0, 0, 0, 0),
+	Color(0.4, 0.2, 0.6, 0.7),
+	Color(0, 0.5, 0, 0.7)
+]
 
 # Pociones y magos asignados a la zona
 var adivination_assigned : int = 0
@@ -138,6 +143,10 @@ func showDialog():
 
 func _on_area_2d_mouse_entered():
 	GameState.currentZone = zoneNumber
+	$Area2D/Polygon2D.color = statesColorsHover[state]
+
+func _on_area_2d_mouse_exited():
+	$Area2D/Polygon2D.color = statesColors[state]
 
 # Método para guardar el estado de la zona
 func save_state():
@@ -213,3 +222,7 @@ func _on_cure_button_mouse_entered():
 
 func _on_cure_button_mouse_exited():
 	GameState.currentZone = zoneNumber
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if (state == 1 || state == 2) && event.is_action_pressed('click'):
+		showDialog()

@@ -16,6 +16,10 @@ signal progress_change()
 @export var pause: bool = true :
 	set(valor):
 		pause = valor
+		if pause && texture_pause_true:
+			$TextureButton.texture_normal = texture_pause_true
+		if !pause && texture_pause_false:
+			$TextureButton.texture_normal = texture_pause_false
 	get:
 		return pause
 
@@ -51,6 +55,9 @@ signal progress_change()
 		level_change()
 	get:
 		return level_knowledge
+
+@export var texture_pause_true : Texture2D
+@export var texture_pause_false : Texture2D
 
 var dic_knowledge = [
 	"Mining",
