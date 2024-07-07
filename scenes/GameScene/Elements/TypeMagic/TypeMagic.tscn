@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djp4ekt2x56fo"]
+[gd_scene load_steps=5 format=3 uid="uid://djp4ekt2x56fo"]
 
 [ext_resource type="Script" path="res://scenes/GameScene/Elements/TypeMagic/TypeMagic.gd" id="1_sk0ax"]
 [ext_resource type="Texture2D" uid="uid://dpykb773vxe42" path="res://assets/images/blankImage.jpg" id="2_gl8nt"]
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="3_6d1nh"]
+[ext_resource type="Texture2D" uid="uid://cmuwmhur0u2w6" path="res://assets/images/levelup.png" id="4_d7iuu"]
 
 [node name="TypeMagic" type="Control"]
 custom_minimum_size = Vector2(380, 212)
@@ -54,6 +55,19 @@ size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "1"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(33, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = -3
+
+[node name="LevelUpTexture" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+texture = ExtResource("4_d7iuu")
+stretch_mode = 4
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 visible = false

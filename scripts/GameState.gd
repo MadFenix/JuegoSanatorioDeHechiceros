@@ -5,6 +5,9 @@ signal nextTurn()
 signal openInfo()
 signal closeInfo()
 
+# Señales para los conocimiento
+signal levelupKnowledge()
+
 # Señales para las zonas
 ## Señal para cambiar el estado de la zona
 signal zoneChanged()

@@ -1,6 +1,5 @@
 extends Control
 
-signal levelup()
 signal progress_add()
 signal progress_change()
 
@@ -28,7 +27,7 @@ signal progress_change()
 		progress = clamp(valor,0,turns_needed_to_levelup[level_knowledge - 1])
 		if progress >= turns_needed_to_levelup[level_knowledge - 1] && turns_needed_to_levelup.size() > level_knowledge:
 			level_knowledge = level_knowledge + 1
-			levelup.emit()
+			GameState.levelupKnowledge.emit()
 			progress = 0
 		if turns_needed_to_levelup.size() <= level_knowledge:
 			progress = 0
@@ -71,7 +70,7 @@ var current_turn : int = 1
 func _ready() -> void:
 	if !knowledge_type:
 		knowledge_type = 0
-	levelup.connect(level_change)
+	GameState.levelupKnowledge.connect(level_change)
 	progress_change.connect(progress_refresh)
 	GameState.nextTurn.connect(progress_knowledge)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://4ionx33eq4yo"]
+[gd_scene load_steps=25 format=3 uid="uid://4ionx33eq4yo"]
 
 [ext_resource type="Theme" uid="uid://bv2a6wh6lyl20" path="res://default_theme.tres" id="1_ry618"]
 [ext_resource type="Script" path="res://scenes/GameScene/Levels/Level.gd" id="1_wiw80"]
@@ -20,7 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://b2iou08eijjy2" path="res://assets/images/rooms/room_exploration.png" id="11_fhqsv"]
 [ext_resource type="PackedScene" uid="uid://8vfe82kbx5bi" path="res://scenes/GameScene/Elements/Magicians/MageThaumaturgy.tscn" id="13_1a0f7"]
 [ext_resource type="Script" path="res://scenes/GameScene/Elements/Knowledge/KnowledgeZones.gd" id="14_75jpu"]
+[ext_resource type="Texture2D" uid="uid://b0na6ud0ce6gx" path="res://assets/images/rooms/room_minning_out.png" id="17_dd2mn"]
+[ext_resource type="Texture2D" uid="uid://bgqwc1gbuha72" path="res://assets/images/rooms/room_mysticism_out.png" id="20_w5r0h"]
 [ext_resource type="PackedScene" uid="uid://c7cujqetvswfv" path="res://scenes/GameScene/Elements/Information.tscn" id="20_x2hlc"]
+[ext_resource type="Texture2D" uid="uid://cid6263h6c6gv" path="res://assets/images/rooms/room_exploration_out.png" id="22_ellce"]
 
 [node name="Base" type="Control"]
 layout_mode = 3
@@ -161,23 +164,23 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MageReceptionist" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
-position = Vector2(80, 0)
+position = Vector2(80, 10)
 scale = Vector2(2, 2)
 
 [node name="MageReceptionist2" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
-position = Vector2(110, 10)
+position = Vector2(110, 20)
 scale = Vector2(2, 2)
 
 [node name="MageReceptionist3" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
-position = Vector2(140, 5)
+position = Vector2(140, 15)
 scale = Vector2(2, 2)
 
 [node name="MageReceptionist4" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
-position = Vector2(50, 5)
+position = Vector2(50, 15)
 scale = Vector2(2, 2)
 
 [node name="MageConcierge" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("7_uvri3")]
-position = Vector2(250, 0)
+position = Vector2(250, 20)
 
 [node name="TypesOfMagicZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
@@ -243,11 +246,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MageEvocation" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
-position = Vector2(0, 35)
+position = Vector2(75, 35)
 scale = Vector2(2, 2)
 
 [node name="MageEvocation2" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
-position = Vector2(120, 0)
+position = Vector2(145, 0)
 scale = Vector2(-2, 2)
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer2/EvocationTM" index="2" groups=["ButtonMagic"]]
@@ -304,7 +307,7 @@ layout_mode = 2
 knowledge_type = 0
 turns_needed_to_levelup = Array[int]([2, 2, 2, 20])
 texture_pause_true = ExtResource("9_nxa8a")
-texture_pause_false = ExtResource("9_nxa8a")
+texture_pause_false = ExtResource("17_dd2mn")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("9_nxa8a")
@@ -318,7 +321,7 @@ layout_mode = 2
 
 [node name="MinMageAdivination" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2" instance=ExtResource("9_osdwa")]
 unique_name_in_owner = true
-position = Vector2(120, 10)
+position = Vector2(120, 3)
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageAdivination" index="0"]
@@ -326,7 +329,7 @@ autoplay = ""
 
 [node name="MinMageThaumaturgy" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
 unique_name_in_owner = true
-position = Vector2(0, 20)
+position = Vector2(20, 10)
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer/MinningK/VBoxContainer/HBoxContainer2/MinMageThaumaturgy" index="0"]
@@ -348,7 +351,7 @@ layout_mode = 2
 knowledge_type = 2
 turns_needed_to_levelup = Array[int]([2, 2, 2, 20])
 texture_pause_true = ExtResource("10_7lopr")
-texture_pause_false = ExtResource("10_7lopr")
+texture_pause_false = ExtResource("20_w5r0h")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("10_7lopr")
@@ -362,7 +365,7 @@ layout_mode = 2
 
 [node name="MysMageThaumaturgy" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
 unique_name_in_owner = true
-position = Vector2(150, 0)
+position = Vector2(0, 40)
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer3/MysticismK/VBoxContainer/HBoxContainer2/MysMageThaumaturgy" index="0"]
@@ -400,7 +403,7 @@ layout_mode = 2
 knowledge_type = 1
 turns_needed_to_levelup = Array[int]([1, 1, 1, 20])
 texture_pause_true = ExtResource("11_fhqsv")
-texture_pause_false = ExtResource("11_fhqsv")
+texture_pause_false = ExtResource("22_ellce")
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK" index="0" groups=["ButtonMagic"]]
 texture_normal = ExtResource("11_fhqsv")
@@ -414,7 +417,7 @@ layout_mode = 2
 
 [node name="ExpMageEvocation" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2" instance=ExtResource("11_6h4vi")]
 unique_name_in_owner = true
-position = Vector2(0, 20)
+position = Vector2(30, 40)
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" parent="VBoxContainer/BaseContainer/KnowledgeZones/MarginContainer2/ExplorationK/VBoxContainer/HBoxContainer2/ExpMageEvocation" index="0"]

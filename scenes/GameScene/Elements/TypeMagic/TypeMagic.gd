@@ -40,6 +40,11 @@ var dic_magic = [
 	"Evocation"
 ]
 
+var dic_color_title = [
+	Color(0,0,0),
+	Color("39797E")
+]
+
 var dialog = "Loading..."
 var confirmationDialog : Node
 
@@ -48,11 +53,29 @@ func _ready() -> void:
 	if !magic_type:
 		magic_type = 0
 	levelup.connect(level_change)
+	GameState.levelupKnowledge.connect(checkCanLevelup)
 	
 	# Cargar el estado guardado si existe
 	if StateManager.has_magic_state(dic_magic[magic_type]):
 		var saved_state = StateManager.load_magic_state(dic_magic[magic_type])
 		restore_state(saved_state)
+	
+	checkCanLevelup()
+
+func checkCanLevelup():
+	var isMiningAccepted = GameState.miningLevel >= mining_needed_to_levelup[level_magic - 1]
+	var isExplorationAccepted = GameState.explorationLevel >= exploration_needed_to_levelup[level_magic - 1]
+	var isMysticismAccepted = GameState.mysticismLevel >= mysticism_needed_to_levelup[level_magic - 1]
+	if isMiningAccepted && isExplorationAccepted && isMysticismAccepted:
+		$VBoxContainer/HBoxContainer/Label.add_theme_color_override("font_color", dic_color_title[1])
+		$VBoxContainer/HBoxContainer/CurrentLevel.add_theme_color_override("font_color", dic_color_title[1])
+		$VBoxContainer/HBoxContainer/Label_Nivel.add_theme_color_override("font_color", dic_color_title[1])
+		$VBoxContainer/HBoxContainer/MarginContainer/LevelUpTexture.visible = true
+	else:
+		$VBoxContainer/HBoxContainer/Label.add_theme_color_override("font_color", dic_color_title[0])
+		$VBoxContainer/HBoxContainer/CurrentLevel.add_theme_color_override("font_color", dic_color_title[0])
+		$VBoxContainer/HBoxContainer/Label_Nivel.add_theme_color_override("font_color", dic_color_title[0])
+		$VBoxContainer/HBoxContainer/MarginContainer/LevelUpTexture.visible = false
 
 func getDialog():
 	var isMiningAccepted = GameState.miningLevel >= mining_needed_to_levelup[level_magic - 1]
@@ -79,6 +102,7 @@ func label_refresh():
 
 func level_change():
 	$VBoxContainer/HBoxContainer/Label_Nivel.text = str(level_magic)
+	checkCanLevelup()
 
 func _on_texture_button_pressed():
 	getDialog()

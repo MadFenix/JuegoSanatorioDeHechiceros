@@ -1,14 +1,14 @@
 [gd_resource type="Theme" load_steps=27 format=3 uid="uid://bv2a6wh6lyl20"]
 
 [ext_resource type="FontFile" uid="uid://mijqax3pl5nw" path="res://assets/font/MikeruFullComicRm-Regular.otf" id="1_pjqht"]
+[ext_resource type="Texture2D" uid="uid://ddtoj2ls4lqvw" path="res://assets/images/btn_triangle_osc.png" id="2_5gsvd"]
 [ext_resource type="Texture2D" uid="uid://8qpw78usosbu" path="res://assets/images/btn_triangle.png" id="2_alcl0"]
-[ext_resource type="Texture2D" uid="uid://cx6yykx2ts28k" path="res://assets/images/btn_rect.png" id="2_wic11"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd20v"]
-texture = ExtResource("2_wic11")
+texture = ExtResource("2_5gsvd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47uox"]
-texture = ExtResource("2_wic11")
+texture = ExtResource("2_5gsvd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csgec"]
 texture = ExtResource("2_alcl0")
