@@ -1,27 +1,27 @@
-# Team
+# Credits
 
-## Director
+## Team
+
+### Director
 [Valentí Gàmez](https://iamvalentigamez.itch.io/)
 
-## Developers
+### Developers
 [Juan Goya](https://jmgoya.itch.io/)
 [Andressance](https://andressance.itch.io/)
 [Valentí Gàmez](https://iamvalentigamez.itch.io/)
 
-## Artists
+### Artists
 [Óscar Castro](https://castgames.itch.io/)
 [Asiquer](https://asiquer.itch.io/)
 
-## Music
+### Music
 [Fran Goya](https://frangoya.itch.io/)
 
-## English Translation
+### English Translation
 [Asiquer](https://asiquer.itch.io/)
 
-## Catalan Translation
+### Catalan Translation
 [Valentí Gámez](https://iamvalentigamez.itch.io/)
-
-# Attribution
 
 ## Typography
 

@@ -8,20 +8,56 @@ script = ExtResource("2_v7yp7")
 attribution_file_path = "res://ATTRIBUTION.md"
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
-text = "[center][font_size=48]Libraries[/font_size]
+text = "[center]
+[font_size=48]Team[/font_size]
+
+[font_size=32]Director[/font_size]
+[url=https://iamvalentigamez.itch.io/]Valentí Gàmez[/url]
+
+[font_size=32]Developers[/font_size]
+[url=https://jmgoya.itch.io/]Juan Goya[/url]
+[url=https://andressance.itch.io/]Andressance[/url]
+[url=https://iamvalentigamez.itch.io/]Valentí Gàmez[/url]
+
+[font_size=32]Artists[/font_size]
+[url=https://castgames.itch.io/]Óscar Castro[/url]
+[url=https://asiquer.itch.io/]Asiquer[/url]
+
+[font_size=32]Music[/font_size]
+[url=https://frangoya.itch.io/]Fran Goya[/url]
+
+[font_size=32]English Translation[/font_size]
+[url=https://asiquer.itch.io/]Asiquer[/url]
+
+[font_size=32]Catalan Translation[/font_size]
+[url=https://iamvalentigamez.itch.io/]Valentí Gámez[/url]
+
+[font_size=48]Typography[/font_size]
+
+[font_size=32]Mikeru full comic Rm[/font_size]
+Author: [url=https://mikerutattoo.com/]Mikeru Tattoo[/url]
+Source: [url=https://github.com/MadFenix/gameJamLevelUp2024/tree/master/assets/font/MikeruFullComicRm-Regular.otf]github: Mad Fénix[/url]
+License: [url=https://creativecommons.org/licenses/by/4.0/deed.en]CC BY 4.0[/url]
+
+[font_size=48]Libraries[/font_size]
 
 [font_size=32]Godot Game Template[/font_size]
 Author: [url=https://github.com/Maaack/Godot-Game-Template/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Game-Template]github: Godot-Game-Template[/url]  
-License: [url=LICENSE.txt]MIT License[/url]  
+License: [url=https://github.com/MadFenix/gameJamLevelUp2024/tree/master/LICENSE.txt]MIT License[/url]  
+
+[font_size=32]Dialogic[/font_size]
+Author: [url=https://github.com/dialogic-godot/dialogic/graphs/contributors]Emi, Jowan and contributors[/url]  
+Source: [url=https://github.com/dialogic-godot/dialogic]github: Dialogic[/url]  
+License: [url=https://github.com/dialogic-godot/dialogic/blob/main/LICENSE]MIT License[/url]  
 
 [font_size=48]Tools[/font_size]
-[font_size=24]Godot[/font_size]
+[font_size=32]Godot[/font_size]
 Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
 Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
 
-[font_size=24]Git[/font_size]
+[font_size=32]Git[/font_size]
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
