@@ -17,6 +17,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(0, 0, 0, 100, 100, 100, 100, 0)
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+theme = ExtResource("2_kjxhi")
 
 [node name="IllButton" type="TextureButton" parent="."]
 visible = false

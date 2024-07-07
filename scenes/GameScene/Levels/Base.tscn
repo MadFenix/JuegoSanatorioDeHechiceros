@@ -161,10 +161,23 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MageReceptionist" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
-position = Vector2(250, 0)
+position = Vector2(80, 0)
+scale = Vector2(2, 2)
+
+[node name="MageReceptionist2" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
+position = Vector2(110, 10)
+scale = Vector2(2, 2)
+
+[node name="MageReceptionist3" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
+position = Vector2(140, 5)
+scale = Vector2(2, 2)
+
+[node name="MageReceptionist4" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("6_fv8ga")]
+position = Vector2(50, 5)
 scale = Vector2(2, 2)
 
 [node name="MageConcierge" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer/HBoxContainer" instance=ExtResource("7_uvri3")]
+position = Vector2(250, 0)
 
 [node name="TypesOfMagicZones" type="VBoxContainer" parent="VBoxContainer/BaseContainer"]
 layout_mode = 2
@@ -265,10 +278,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MageThaumaturgy" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
+position = Vector2(0, 35)
 scale = Vector2(2, 2)
 
 [node name="MageThaumaturgy2" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer/HBoxContainer2" instance=ExtResource("13_1a0f7")]
-position = Vector2(150, 25)
+position = Vector2(138, 25)
 scale = Vector2(2, 2)
 
 [node name="TextureButton" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM" index="2" groups=["ButtonMagic"]]
