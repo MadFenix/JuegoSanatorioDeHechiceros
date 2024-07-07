@@ -417,10 +417,10 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="BackgroundTextureRect" parent="." index="4"]
+[node name="BackgroundTextureRect" parent="." index="5"]
 texture = ExtResource("3_060iy")
 
-[node name="VersionNameLabel" parent="." index="5"]
+[node name="VersionNameLabel" parent="." index="6"]
 modulate = Color(1, 1, 1, 0)
 
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
@@ -428,7 +428,6 @@ modulate = Color(1, 1, 1, 0)
 
 [node name="SubTitle" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="1"]
 modulate = Color(1, 1, 1, 0)
-text = "Subtitle"
 
 [node name="MenuMargin" parent="MenuContainer/VBoxContainer" index="1"]
 theme_override_constants/margin_left = 30

@@ -154,7 +154,7 @@ text = "Reception"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BaseContainer/AutoZones/MarginContainer2/ReceptionTexture/VBoxContainer"]
@@ -258,7 +258,7 @@ sourcerers_by_levelup = Array[int]([2, 4, 7, 11])
 texture = ExtResource("7_ve25c")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(0, 70)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BaseContainer/TypesOfMagicZones/MarginContainer3/ThaumatugicTM/VBoxContainer" index="2"]
@@ -413,6 +413,9 @@ layout_mode = 2
 
 [node name="Summary" parent="VBoxContainer/BaseContainer" instance=ExtResource("3_yfgrd")]
 layout_mode = 2
+
+[node name="MarginContainer4" parent="VBoxContainer/BaseContainer/Summary" index="3"]
+visible = false
 
 [node name="InfoBtn" parent="VBoxContainer/BaseContainer/Summary/MarginContainer8" index="0" groups=["Button"]]
 

@@ -61,11 +61,11 @@ func getDialog():
 	if isMiningAccepted && isExplorationAccepted && isMysticismAccepted:
 		dialog = "Do you want to level up?"
 	else:
-		if TranslationServer.get_locale() == 'en':
+		if GameState.language == 'en':
 			dialog = "You do not meet the requirements to level up.\nMining: " + str(mining_needed_to_levelup[level_magic - 1]) + "\nExploration: " + str(exploration_needed_to_levelup[level_magic - 1]) + "\nMysticism: " + str(mysticism_needed_to_levelup[level_magic - 1])
-		if TranslationServer.get_locale() == 'es':
+		if GameState.language == 'es':
 			dialog = "No cumples los requisitos para subir de nivel.\nMinería: " + str(mining_needed_to_levelup[level_magic - 1]) + "\nExploración: " + str(exploration_needed_to_levelup[level_magic - 1]) + "\nMisticismo: " + str(mysticism_needed_to_levelup[level_magic - 1])
-		if TranslationServer.get_locale() == 'ca':
+		if GameState.language == 'ca':
 			dialog = "No cumpleixes els requisits per pujar de nivell.\nMineria: " + str(mining_needed_to_levelup[level_magic - 1]) + "\nExploració: " + str(exploration_needed_to_levelup[level_magic - 1]) + "\nMisticisme: " + str(mysticism_needed_to_levelup[level_magic - 1])
 	confirmationDialog.title = getType()
 	confirmationDialog.dialog_text = dialog

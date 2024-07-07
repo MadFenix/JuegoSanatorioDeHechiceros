@@ -59,6 +59,9 @@ layout_mode = 2
 [node name="Summary" parent="VBoxContainer/MapContainer" instance=ExtResource("2_3weym")]
 layout_mode = 2
 
+[node name="MarginContainer4" parent="VBoxContainer/MapContainer/Summary" index="3"]
+visible = false
+
 [node name="InfoBtn" parent="VBoxContainer/MapContainer/Summary/MarginContainer8" index="0" groups=["Button"]]
 
 [node name="PassTurn" parent="VBoxContainer/MapContainer/Summary/MarginContainer6" index="0" groups=["Button"]]

@@ -14,6 +14,7 @@ credits_packed_scene = ExtResource("3_fhpuo")
 
 [node name="BackgroundMusicPlayer" parent="." index="1"]
 stream = ExtResource("5_4j20o")
+volume_db = -15.0
 
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
 theme_override_font_sizes/font_size = 65

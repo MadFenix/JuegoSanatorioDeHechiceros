@@ -65,12 +65,15 @@ func _on_exit_button_pressed():
 
 func _on_english_button_pressed():
 	TranslationServer.set_locale('en')
+	GameState.language = 'en'
 
 func _on_spanish_button_pressed():
 	TranslationServer.set_locale('es')
+	GameState.language = 'es'
 
 func _on_catalan_button_pressed():
 	TranslationServer.set_locale('ca')
+	GameState.language = 'ca'
 
 func _on_confirm_restart_confirmed():
 	SceneLoader.reload_current_scene()

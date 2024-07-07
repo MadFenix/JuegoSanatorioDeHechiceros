@@ -25,7 +25,7 @@ grow_vertical = 2
 color = Color(0.443137, 0.443137, 0.443137, 0.501961)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(800, 450)
+custom_minimum_size = Vector2(800, 650)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

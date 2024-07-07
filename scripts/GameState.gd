@@ -42,6 +42,8 @@ var currentThaumaturgyMages = 2
 
 var firstViewToBase = true
 
+var language = 'es'
+
 func incrementTurn():
 	currentTurn += 1
 	currentAdivinationMages = adivinationMages

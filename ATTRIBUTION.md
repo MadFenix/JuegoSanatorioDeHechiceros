@@ -37,6 +37,11 @@ Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Game-Tem
 Source: [github: Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template)  
 License: [MIT License](https://github.com/MadFenix/gameJamLevelUp2024/tree/master/LICENSE.txt)  
 
+### Dialogic
+Author: [Emi, Jowan and contributors](https://github.com/dialogic-godot/dialogic/graphs/contributors)  
+Source: [github: Dialogic](https://github.com/dialogic-godot/dialogic)  
+License: [MIT License](https://github.com/dialogic-godot/dialogic/blob/main/LICENSE)  
+
 ## Tools
 ### Godot
 Author: [Juan Linietsky, Ariel Manzur, and contributors](https://godotengine.org/contact)  

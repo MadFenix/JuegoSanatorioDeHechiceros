@@ -88,6 +88,7 @@ func _setup_credits():
 
 func _ready():
 	button_sound = %ButtonSound
+	_on_spanish_button_pressed()
 	_setup_for_web()
 	_setup_version_name()
 	_setup_options()
@@ -118,12 +119,15 @@ func _on_exit_button_pressed():
 
 func _on_english_button_pressed():
 	TranslationServer.set_locale('en')
+	GameState.language = 'en'
 
 func _on_spanish_button_pressed():
 	TranslationServer.set_locale('es')
+	GameState.language = 'es'
 
 func _on_catalan_button_pressed():
 	TranslationServer.set_locale('ca')
+	GameState.language = 'ca'
 
 func _on_credits_end_reached():
 	if sub_menu == credits_scene:

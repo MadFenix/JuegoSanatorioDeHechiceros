@@ -101,18 +101,18 @@ func update_dialogue() -> void:
 		var isThaumaturgicAccepted = GameState.currentThaumaturgyMages >= thaumaturgy_needed
 		var isEvocationAccepted = GameState.currentEvocationMages >= evocation_needed
 		if isAdivinationAccepted && isThaumaturgicAccepted && isEvocationAccepted:
-			if TranslationServer.get_locale() == 'en':
+			if GameState.language == 'en':
 				dialogue = "Do you want to heal the area?\nAdivination: " + str(adivination_needed) + "\nThaumaturgy: " + str(thaumaturgy_needed) + "\nEvocation: " + str(evocation_needed)
-			if TranslationServer.get_locale() == 'es':
+			if GameState.language == 'es':
 				dialogue = "¿Quieres curar la zona?\nAdivinación: " + str(adivination_needed) + "\nTaumaturgia: " + str(thaumaturgy_needed) + "\nEvocación: " + str(evocation_needed)
-			if TranslationServer.get_locale() == 'ca':
+			if GameState.language == 'ca':
 				dialogue = "Vols curar la zona?\nAdivinació: " + str(adivination_needed) + "\nTaumatúrgia: " + str(thaumaturgy_needed) + "\nEvocació: " + str(evocation_needed)
 		else:
-			if TranslationServer.get_locale() == 'en':
+			if GameState.language == 'en':
 				dialogue = "You do not meet the requirements to cure the area.\nAdivination: " + str(adivination_needed) + "\nThaumaturgy: " + str(thaumaturgy_needed) + "\nEvocation: " + str(evocation_needed)
-			if TranslationServer.get_locale() == 'es':
+			if GameState.language == 'es':
 				dialogue = "No cumples los requisitos para curar la zona.\nAdivinación: " + str(adivination_needed) + "\nTaumaturgia: " + str(thaumaturgy_needed) + "\nEvocación: " + str(evocation_needed)
-			if TranslationServer.get_locale() == 'ca':
+			if GameState.language == 'ca':
 				dialogue = "No cumpleixes els requisits per curar la zona.\nAdivinació: " + str(adivination_needed) + "\nTaumatúrgia: " + str(thaumaturgy_needed) + "\nEvocació: " + str(evocation_needed)
 	elif states[state] == "curada":
 		dialogue = "The area has been healed. Congratulations!"
