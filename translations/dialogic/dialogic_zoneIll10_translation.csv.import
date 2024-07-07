@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bnsnmutua1ytw"
+
+[deps]
+
+files=["res://translations/dialogic/dialogic_zoneIll10_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.ca.translation"]
+
+source_file="res://translations/dialogic/dialogic_zoneIll10_translation.csv"
+dest_files=["res://translations/dialogic/dialogic_zoneIll10_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.ca.translation"]
+
+[params]
+
+compress=true
+delimiter=0

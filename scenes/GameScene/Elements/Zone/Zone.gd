@@ -76,11 +76,17 @@ func set_state(is_turn_change = false) -> void:
 	if !is_turn_change && thaumaturgy_assigned >= thaumaturgy_required and adivination_assigned >= adivination_required and evocation_assigned >= evocation_required:
 		state = 2 # curada
 		GameState.emit_signal("zoneChanged")
+		$IllButton.visible = false
+		$CureButton.visible = true
 	elif GameState.currentTurn == turn_to_ill:
 		state = 1
+		$IllButton.visible = true
+		$CureButton.visible = false
 	
 	if last_state == state and state != 1:
 		state = 0 # sana
+		$IllButton.visible = false
+		$CureButton.visible = false
 		GameState.emit_signal("zoneChanged")
 	
 	save_state()
@@ -115,9 +121,13 @@ func nextTurn() -> void:
 
 func changeStateToIll() -> void:
 	state = 1
+	$IllButton.visible = true
+	$CureButton.visible = false
 
 func changeStateToCure() -> void:
-	state = 1
+	state = 2
+	$IllButton.visible = false
+	$CureButton.visible = true
 
 func showDialog():
 	update_dialogue()
@@ -144,6 +154,12 @@ func save_state():
 # Método para restaurar el estado de la zona
 func restore_state(state_data: Dictionary):
 	state = state_data["state"]
+	if state == 1:
+		$IllButton.visible = true
+		$CureButton.visible = false
+	elif state == 2:
+		$IllButton.visible = false
+		$CureButton.visible = true
 	adivination_assigned = state_data["adivination_assigned"]
 	thaumaturgy_assigned = state_data["thaumaturgy_assigned"]
 	evocation_assigned = state_data["evocation_assigned"]
@@ -171,3 +187,28 @@ func _on_confirmation_dialog_confirmed():
 
 func _on_confirmation_dialog_canceled():
 	dialogue_node.hide()
+
+func _on_ill_button_pressed():
+	if Dialogic.current_timeline != null:
+		return
+	
+	Dialogic.start('zoneIll' + str(zoneNumber))
+
+func _on_cure_button_pressed():
+	if Dialogic.current_timeline != null:
+		return
+	
+	Dialogic.start('zoneCure' + str(zoneNumber))
+
+
+func _on_ill_button_mouse_entered():
+	GameState.currentZone = 0
+
+func _on_ill_button_mouse_exited():
+	GameState.currentZone = zoneNumber
+
+func _on_cure_button_mouse_entered():
+	GameState.currentZone = 0
+
+func _on_cure_button_mouse_exited():
+	GameState.currentZone = zoneNumber

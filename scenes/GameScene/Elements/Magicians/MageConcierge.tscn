@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmln1ialwbf0c"]
+
+[ext_resource type="Texture2D" uid="uid://101vnisj5wlk" path="res://assets/images/mages/concierge.png" id="1_x14i8"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(80, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_x14i8")

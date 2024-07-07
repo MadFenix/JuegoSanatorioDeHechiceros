@@ -23,6 +23,75 @@ ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoload
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 GameState="*res://scripts/GameState.gd"
 StateManager="*res://scripts/StateManager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"Alba": "res://assets/dialogic/characters/Alba.dch",
+"Andres": "res://assets/dialogic/characters/Andres.dch",
+"Concierge": "res://assets/dialogic/characters/Concierge.dch",
+"Fran": "res://assets/dialogic/characters/Fran.dch",
+"Iker": "res://assets/dialogic/characters/Iker.dch",
+"Juan": "res://assets/dialogic/characters/Juan.dch",
+"Mar": "res://assets/dialogic/characters/Mar.dch",
+"Oscar": "res://assets/dialogic/characters/Oscar.dch",
+"Valenti": "res://assets/dialogic/characters/Valenti.dch"
+}
+directories/dtl_directory={
+"zoneCure1": "res://assets/dialogic/timelines/zoneCure1.dtl",
+"zoneCure10": "res://assets/dialogic/timelines/zoneCure10.dtl",
+"zoneCure2": "res://assets/dialogic/timelines/zoneCure2.dtl",
+"zoneCure3": "res://assets/dialogic/timelines/zoneCure3.dtl",
+"zoneCure4": "res://assets/dialogic/timelines/zoneCure4.dtl",
+"zoneCure5": "res://assets/dialogic/timelines/zoneCure5.dtl",
+"zoneCure6": "res://assets/dialogic/timelines/zoneCure6.dtl",
+"zoneCure7": "res://assets/dialogic/timelines/zoneCure7.dtl",
+"zoneCure8": "res://assets/dialogic/timelines/zoneCure8.dtl",
+"zoneCure9": "res://assets/dialogic/timelines/zoneCure9.dtl",
+"zoneIll1": "res://assets/dialogic/timelines/zoneIll1.dtl",
+"zoneIll10": "res://assets/dialogic/timelines/zoneIll10.dtl",
+"zoneIll2": "res://assets/dialogic/timelines/zoneIll2.dtl",
+"zoneIll3": "res://assets/dialogic/timelines/zoneIll3.dtl",
+"zoneIll4": "res://assets/dialogic/timelines/zoneIll4.dtl",
+"zoneIll5": "res://assets/dialogic/timelines/zoneIll5.dtl",
+"zoneIll6": "res://assets/dialogic/timelines/zoneIll6.dtl",
+"zoneIll7": "res://assets/dialogic/timelines/zoneIll7.dtl",
+"zoneIll8": "res://assets/dialogic/timelines/zoneIll8.dtl",
+"zoneIll9": "res://assets/dialogic/timelines/zoneIll9.dtl"
+}
+variables={}
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/join_default_wait=true
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+translation/enabled=true
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder="res://translations/dialogic"
+translation/save_mode=0
+translation/add_separator=false
+text/autopauses={}
+layout/style_list=["res://assets/dialogic/styles/portrait.tres"]
+layout/default_style="res://assets/dialogic/styles/portrait.tres"
+glossary/default_case_sensitive=true
+translation/intern/save_mode=0
+translation/intern/file_mode=1
+translation/intern/translation_folder="res://translations/dialogic"
+translation/id_counter=69
+translation/locales=["en", "fr", "ca", "es"]
 
 [display]
 
@@ -37,7 +106,7 @@ project/assembly_name="Game Template"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
 
 [gui]
 
@@ -106,10 +175,19 @@ click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(488, 19),"global_position":Vector2(492, 60),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/menus_translations.ca.translation", "res://translations/menus_translations.en.translation", "res://translations/menus_translations.es.translation")
+locale/translations=PackedStringArray("res://translations/menus_translations.ca.translation", "res://translations/menus_translations.en.translation", "res://translations/menus_translations.es.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation", "res://translations/dialogic/dialogic_character_translations.ca.translation", "res://translations/dialogic/dialogic_character_translations.en.translation", "res://translations/dialogic/dialogic_character_translations.es.translation", "res://translations/dialogic/dialogic_character_translations.fr.translation", "res://translations/dialogic/dialogic_zoneCure10_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure10_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure10_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure10_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure1_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure1_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure1_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure1_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure2_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure2_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure2_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure2_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure3_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure3_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure3_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure3_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure4_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure4_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure4_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure4_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure5_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure5_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure5_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure5_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure6_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure6_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure6_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure6_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure7_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure7_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure7_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure7_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure8_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure8_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure8_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure8_translation.fr.translation", "res://translations/dialogic/dialogic_zoneCure9_translation.ca.translation", "res://translations/dialogic/dialogic_zoneCure9_translation.en.translation", "res://translations/dialogic/dialogic_zoneCure9_translation.es.translation", "res://translations/dialogic/dialogic_zoneCure9_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll10_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll1_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll1_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll1_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll1_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll2_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll2_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll2_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll2_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll3_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll3_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll3_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll3_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll4_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll4_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll4_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll4_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll5_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll5_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll5_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll5_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll6_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll6_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll6_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll6_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll7_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll7_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll7_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll7_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll8_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll8_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll8_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll8_translation.fr.translation", "res://translations/dialogic/dialogic_zoneIll9_translation.ca.translation", "res://translations/dialogic/dialogic_zoneIll9_translation.en.translation", "res://translations/dialogic/dialogic_zoneIll9_translation.es.translation", "res://translations/dialogic/dialogic_zoneIll9_translation.fr.translation", "res://translations/menus_translations.fr.translation")
 
 [maaacks_game_template]
 

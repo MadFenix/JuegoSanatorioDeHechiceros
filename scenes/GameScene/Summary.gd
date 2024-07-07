@@ -32,10 +32,11 @@ func typeMagicChange(magicType = ""):
 	
 
 func setTurnLabel(turn):
-	$MarginContainer5/VBoxContainer/CurrentTurn.text = turn + " / 13"
+	$MarginContainer5/VBoxContainer/CurrentTurn.text = turn + " / " + str(GameState.maxTurn)
 
 func _on_pass_turn_pressed():
-	GameState.passToNextTurn()
+	if GameState.currentTurn < GameState.maxTurn:
+		GameState.passToNextTurn()
 
 
 func _on_info_btn_pressed():

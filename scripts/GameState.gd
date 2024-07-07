@@ -22,6 +22,7 @@ var currentLevel : String
 var currentZone : int = 0
 
 var currentTurn = 1
+var maxTurn = 15
 var miningLevel = 1
 var explorationLevel = 1
 var mysticismLevel = 1
